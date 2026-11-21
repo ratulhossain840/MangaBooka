@@ -1,0 +1,11 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // ডাটাবেসে ব্রাউজার থেকে সরাসরি কেউ পড়তে বা লিখতে পারবে না।
+    // সব কাজ আমাদের সার্ভারের (Admin SDK) মাধ্যমে হবে, তাই
+    // পেইড কনটেন্ট, অর্ডার, অ্যাডমিন ডাটা সব সুরক্ষিত।
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
