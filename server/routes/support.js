@@ -6,10 +6,9 @@
 import { Router } from 'express';
 import crypto from 'crypto';
 import { FieldValue } from 'firebase-admin/firestore';
-import * as FB from '../firebaseAdmin.js';
+import { db } from '../firebaseAdmin.js';
 import { optionalAuth, requireAuth, withContext, limiter, asyncHandler, httpError } from '../middleware/auth.js';
 
-const db = FB.db || FB.firestore || (typeof FB.getDb === 'function' ? FB.getDb() : null) || FB.default;
 const router = Router();
 router.use(withContext);
 
