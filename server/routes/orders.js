@@ -5,10 +5,11 @@
 import { Router } from 'express';
 import crypto from 'crypto';
 import { FieldValue } from 'firebase-admin/firestore';
-import * as FB from '../firebaseAdmin.js';
+import { db } from '../firebaseAdmin.js';
 import { optionalAuth, requireAuth, withContext, limiter, asyncHandler, httpError } from '../middleware/auth.js';
+import { getCatalog, getSettings } from '../utils/cache.js';
+import { computePrice, rulesOf, localize } from '../utils/pricing.js';
 
-const db = FB.db || FB.firestore || (typeof FB.getDb === 'function' ? FB.getDb() : null) || FB.default;
 const router = Router();
 router.use(withContext);
 
@@ -26,35 +27,6 @@ const makeCode = () => {
 const ms = (t) => (t && typeof t.toMillis === 'function' ? t.toMillis() : null);
 const METHODS = { BD: ['bkash', 'nagad'], INT: ['usdt_trc20', 'usdt_bep20'] };
 const cleanKey = (v, n = 40) => String(v || '').toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, n);
-
-// ---------- দাম (utils/pricing.js এর নিয়মেরই কপি, সার্ভারে আবার যাচাইয়ের জন্য) ----------
-async function getPublicSettings() {
-  const s = await db.doc('settings/public').get();
-  return s.exists ? s.data() : {};
-}
-function finalPrice(p, market, st, now = Date.now()) {
-  const base = Number(market === 'BD' ? p.priceBDT : p.priceUSD);
-  if (!(base > 0)) return null;
-  let price = base;
-  const d = p.discount;
-  if (d) {
-    const t = (v) => (v == null || v === '' ? null : typeof v?.toMillis === 'function' ? v.toMillis() : new Date(v).getTime());
-    const s0 = t(d.start), e0 = t(d.end);
-    const active = (s0 == null || now >= s0) && (e0 == null || now <= e0);
-    const minBase = market === 'BD' ? st.minDiscountBDT ?? 200 : st.minDiscountUSD ?? 4;
-    if (active && base >= minBase) {
-      let off = 0;
-      if (d.percent > 0) off = (base * d.percent) / 100;
-      else if (market === 'BD' && d.fixedBDT > 0) off = d.fixedBDT;
-      else if (market !== 'BD' && d.fixedUSD > 0) off = d.fixedUSD;
-      let np = base - off;
-      if (market === 'BD') np = Math.round(np);
-      else np = Math.round(Math.max(np, st.minPayableUSD ?? 3) * 100) / 100;
-      if (np > 0 && np < base) price = np;
-    }
-  }
-  return { price, base };
-}
 
 const view = (id, o) => ({
   id,
@@ -133,10 +105,9 @@ router.post('/', limiter(10, 10), optionalAuth, asyncHandler(async (req, res) =>
   const utm = { source: cleanKey(u.source), medium: cleanKey(u.medium), campaign: cleanKey(u.campaign) };
   const utmKey = utm.source || utm.campaign ? `${utm.source || 'none'}__${utm.campaign || 'none'}` : null;
 
-  const [st, snaps] = await Promise.all([
-    getPublicSettings(),
-    db.getAll(...ids.map((id) => db.doc('products/' + id))),
-  ]);
+  // ক্যাটালগ ক্যাশ থেকে (Firestore রিড বাঁচে); দাম/ছাড় সার্ভারে pricing.js দিয়েই হিসাব হয়
+  const [catalog, st] = await Promise.all([getCatalog(), getSettings()]);
+  const rules = rulesOf(st);
 
   if (uid) {
     const owned = await db.getAll(...ids.map((id) => db.doc(`users/${uid}/library/${id}`)));
@@ -144,21 +115,21 @@ router.post('/', limiter(10, 10), optionalAuth, asyncHandler(async (req, res) =>
   }
 
   const lang = req.ctx?.lang || 'en';
+  const now = Date.now();
   let total = 0;
-  const items = snaps.map((s) => {
-    if (!s.exists) throw httpError(404, 'একটি প্রোডাক্ট পাওয়া যায়নি');
-    const p = s.data();
-    if (p.status !== 'published') throw httpError(404, 'একটি প্রোডাক্ট এখন পাওয়া যাচ্ছে না');
-    const fp = finalPrice(p, market, st);
+  const items = ids.map((id) => {
+    const p = catalog.byId.get(id);
+    if (!p) throw httpError(404, 'একটি প্রোডাক্ট পাওয়া যায়নি');
+    const fp = computePrice(p, market, now, rules);
     if (!fp) throw httpError(400, 'এই প্রোডাক্ট আপনার বাজারে বিক্রি হচ্ছে না');
-    total += fp.price;
+    total += fp.final;
     return {
-      productId: s.id,
+      productId: id,
       type: p.type,
       slug: p.slug,
-      title: p.i18n?.[lang]?.title || p.i18n?.en?.title || p.i18n?.bn?.title || '',
+      title: localize(p, lang).title,
       coverUrl: p.coverUrl || '',
-      price: fp.price,
+      price: fp.final,
       basePrice: fp.base,
     };
   });
