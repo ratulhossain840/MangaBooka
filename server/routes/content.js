@@ -5,10 +5,9 @@
 
 import { Router } from 'express';
 import crypto from 'crypto';
-import * as FB from '../firebaseAdmin.js';
+import { db, isAdminUid } from '../firebaseAdmin.js';
 import { optionalAuth, requireAuth, withContext, limiter, asyncHandler, httpError } from '../middleware/auth.js';
 
-const db = FB.db || FB.firestore || (typeof FB.getDb === 'function' ? FB.getDb() : null) || FB.default;
 const router = Router();
 router.use(withContext);
 router.use((req, res, next) => {
@@ -21,7 +20,6 @@ const safeEq = (a, b) => {
   const x = Buffer.from(String(a || '')), y = Buffer.from(String(b || ''));
   return x.length === y.length && crypto.timingSafeEqual(x, y);
 };
-const isAdminUid = (uid) => (process.env.ADMIN_UIDS || '').split(',').map((s) => s.trim()).filter(Boolean).includes(uid);
 const ID = /^[A-Za-z0-9_-]{1,64}$/;
 
 async function hasAccess(req, productId) {
