@@ -4,11 +4,11 @@
 
 import { Router } from 'express';
 import { FieldValue } from 'firebase-admin/firestore';
-import * as FB from '../firebaseAdmin.js';
+import { db } from '../firebaseAdmin.js';
 import * as Cache from '../utils/cache.js';
+import { checkDiscount, rulesOf } from '../utils/pricing.js';
 import { requireAdmin, limiter, asyncHandler, httpError } from '../middleware/auth.js';
 
-const db = FB.db || FB.firestore || (typeof FB.getDb === 'function' ? FB.getDb() : null) || FB.default;
 const router = Router();
 router.use(limiter(300, 1));
 router.use(requireAdmin);
@@ -200,7 +200,7 @@ function cleanDiscount(d) {
   const o = {};
   if (d.percent != null && d.percent !== '') {
     const p = Number(d.percent);
-    if (!(p > 0 && p <= 90)) throw httpError(400, 'ছাড়ের শতাংশ ১ থেকে ৯০ এর মধ্যে দিন');
+    if (!(p > 0 && p < 100)) throw httpError(400, 'ছাড়ের শতাংশ ১ থেকে ৯৯ এর মধ্যে দিন');
     o.percent = p;
   }
   if (d.fixedBDT != null && d.fixedBDT !== '') o.fixedBDT = priceOrNull(d.fixedBDT, 'fixedBDT');
@@ -215,6 +215,14 @@ function cleanDiscount(d) {
   o.end = date(d.end);
   if (o.percent == null && o.fixedBDT == null && o.fixedUSD == null) return null;
   return o;
+}
+
+// ছাড়ের নিয়ম যাচাই (utils/pricing.js checkDiscount): ত্রুটি থাকলে সেভ হবে না, সতর্কতা ফেরত যায়
+async function discountWarnings(product) {
+  if (!product.discount) return [];
+  const { errors, warnings } = checkDiscount(product, rulesOf(await Cache.getSettings()));
+  if (errors.length) throw httpError(400, errors.join(' '));
+  return warnings;
 }
 
 async function slugTaken(slug, exceptId) {
@@ -282,6 +290,7 @@ router.get('/products/:id', asyncHandler(async (req, res) => {
 router.post('/products', asyncHandler(async (req, res) => {
   const o = cleanProduct(req.body || {}, true);
   if (await slugTaken(o.slug, null)) throw httpError(409, 'এই slug আগেই আছে');
+  const warnings = await discountWarnings(o);
   const ref = db.collection('products').doc();
   await ref.set({
     status: 'draft', coverUrl: '', category: '', featured: false, sortOrder: 100, priceBDT: null, priceUSD: null, discount: null,
@@ -292,7 +301,7 @@ router.post('/products', asyncHandler(async (req, res) => {
     updatedAt: FieldValue.serverTimestamp(),
   });
   invalidateAll();
-  res.status(201).json({ id: ref.id });
+  res.status(201).json({ id: ref.id, warnings });
 }));
 
 router.put('/products/:id', asyncHandler(async (req, res) => {
@@ -302,6 +311,7 @@ router.put('/products/:id', asyncHandler(async (req, res) => {
   if (!s.exists) throw httpError(404, 'প্রোডাক্ট নেই');
   const o = cleanProduct(req.body || {}, false);
   if (o.slug && o.slug !== s.data().slug && (await slugTaken(o.slug, s.id))) throw httpError(409, 'এই slug আগেই আছে');
+  const warnings = await discountWarnings({ ...s.data(), ...o });
   const upd = {};
   for (const [k, v] of Object.entries(o)) {
     if (k === 'i18n') for (const [l, val] of Object.entries(v)) upd[`i18n.${l}`] = val; // অন্য ভাষা মুছে যায় না
@@ -310,7 +320,7 @@ router.put('/products/:id', asyncHandler(async (req, res) => {
   upd.updatedAt = FieldValue.serverTimestamp();
   await ref.update(upd);
   invalidateAll();
-  res.json({ ok: true });
+  res.json({ ok: true, warnings });
 }));
 
 // ================= চ্যাপ্টার =================
