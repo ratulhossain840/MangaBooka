@@ -25,7 +25,7 @@ const makeCode = () => {
   return 'MB-' + s;
 };
 const ms = (t) => (t && typeof t.toMillis === 'function' ? t.toMillis() : null);
-const METHODS = { BD: ['bkash', 'nagad'], INT: ['usdt_trc20', 'usdt_bep20'] };
+const METHODS = { BD: ['bkash', 'nagad'], INT: ['usdt_bep20', 'usdt_erc20'] };
 const cleanKey = (v, n = 40) => String(v || '').toLowerCase().replace(/[^a-z0-9_-]/g, '').slice(0, n);
 
 const view = (id, o) => ({
@@ -58,20 +58,20 @@ async function findByCode(code, secret) {
   return doc;
 }
 
-// ---------- পেমেন্ট তথ্য (শুধু চেকআউটে) ----------
-let payCache = { at: 0, data: null };
+// ---------- পেমেন্ট তথ্য (শুধু চেকআউটে; নম্বর/ঠিকানা Render Environment থেকে, ডাটাবেসে নয়) ----------
+// env: PAY_BKASH, PAY_NAGAD, PAY_NOTE_BD, USDT_BEP20_ADDRESS, USDT_ERC20_ADDRESS, PAY_NOTE_INT
+const env = (k) => (process.env[k] || '').trim() || null;
 router.get('/payment-info', limiter(60, 10), asyncHandler(async (req, res) => {
   const market = req.ctx?.market === 'BD' ? 'BD' : 'INT';
-  if (!payCache.data || Date.now() - payCache.at > 60000) {
-    const s = await db.doc('settings/payment').get();
-    payCache = { at: Date.now(), data: s.exists ? s.data() : {} };
-  }
-  const s = payCache.data;
   res.set('Cache-Control', 'no-store');
   if (market === 'BD') {
-    return res.json({ market, methods: { bkash: s.bkash || null, nagad: s.nagad || null }, note: s.noteBD || '' });
+    return res.json({ market, methods: { bkash: env('PAY_BKASH'), nagad: env('PAY_NAGAD') }, note: env('PAY_NOTE_BD') || '' });
   }
-  res.json({ market, methods: { usdt_trc20: s.usdtTrc20 || null, usdt_bep20: s.usdtBep20 || null }, note: s.noteINT || '' });
+  res.json({
+    market,
+    methods: { usdt_bep20: env('USDT_BEP20_ADDRESS'), usdt_erc20: env('USDT_ERC20_ADDRESS') },
+    note: env('PAY_NOTE_INT') || '',
+  });
 }));
 
 // ---------- অর্ডার তৈরি ----------
@@ -87,9 +87,13 @@ router.post('/', limiter(10, 10), optionalAuth, asyncHandler(async (req, res) =>
 
   const method = String(b.method || '');
   if (!METHODS[market].includes(method)) throw httpError(400, 'পেমেন্ট পদ্ধতি ঠিক নয়');
+  const ENV_OF = { bkash: 'PAY_BKASH', nagad: 'PAY_NAGAD', usdt_bep20: 'USDT_BEP20_ADDRESS', usdt_erc20: 'USDT_ERC20_ADDRESS' };
+  if (!env(ENV_OF[method])) throw httpError(400, 'এই পেমেন্ট পদ্ধতি এখন চালু নেই');
 
   const trxId = String(b.trxId || '').trim();
   if (trxId.length < 6 || trxId.length > 120 || /\s/.test(trxId)) throw httpError(400, 'TrxID/TXID ঠিকভাবে দিন (ফাঁকা ছাড়া)');
+  // USDT (BEP20/ERC20) লেনদেনের হ্যাশ: 0x + ৬৪টি হেক্স অক্ষর
+  if (market !== 'BD' && !/^0x[a-fA-F0-9]{64}$/.test(trxId)) throw httpError(400, 'TXID ঠিক নয় (0x দিয়ে শুরু, মোট ৬৬ অক্ষর হতে হবে)');
 
   let screenshotUrl = null;
   if (b.screenshotUrl) {
