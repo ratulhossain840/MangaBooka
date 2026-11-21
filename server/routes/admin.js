@@ -7,9 +7,15 @@ import { FieldValue } from 'firebase-admin/firestore';
 import { db } from '../firebaseAdmin.js';
 import * as Cache from '../utils/cache.js';
 import { checkDiscount, rulesOf } from '../utils/pricing.js';
+import { checkEnv } from '../scripts/checkEnv.js';
+import { seedDemo, removeDemo, bootSeed } from '../scripts/seed.js';
 import { requireAdmin, limiter, asyncHandler, httpError } from '../middleware/auth.js';
 
 const router = Router();
+
+// সার্ভার চালুর সময়: Render Logs-এ পরিবেশ ভ্যারিয়েবলের রিপোর্ট, আর SEED_DEMO থাকলে ডেমো বসানো/মোছা
+checkEnv({ log: true });
+if (process.env.SEED_DEMO) bootSeed().catch((e) => console.error('[seed] ব্যর্থ', e));
 router.use(limiter(300, 1));
 router.use(requireAdmin);
 router.use((req, res, next) => {
@@ -461,20 +467,32 @@ router.put('/settings/public', asyncHandler(async (req, res) => {
   res.json({ ok: true });
 }));
 
-// পেমেন্ট: bkash, nagad, usdtTrc20, usdtBep20, noteBD, noteINT
-router.get('/settings/payment', asyncHandler(async (req, res) => {
-  const s = await db.doc('settings/payment').get();
-  res.json(s.exists ? s.data() : {});
-}));
+// পেমেন্ট নম্বর/ঠিকানা Render Environment-এ থাকে (ডাটাবেসে নয়)। এখানে শুধু চালু আছে কিনা ও শেষ ৪ অক্ষর দেখায়।
+// বদলাতে: Render -> Environment -> PAY_BKASH, PAY_NAGAD, USDT_BEP20_ADDRESS, USDT_ERC20_ADDRESS
+router.get('/settings/payment', (req, res) => {
+  const mask = (k) => {
+    const v = (process.env[k] || '').trim();
+    return v ? { configured: true, last4: v.slice(-4) } : { configured: false, last4: null };
+  };
+  res.json({
+    source: 'env',
+    bkash: mask('PAY_BKASH'),
+    nagad: mask('PAY_NAGAD'),
+    usdtBep20: mask('USDT_BEP20_ADDRESS'),
+    usdtErc20: mask('USDT_ERC20_ADDRESS'),
+  });
+});
 
-router.put('/settings/payment', asyncHandler(async (req, res) => {
-  const b = req.body || {};
-  const o = {};
-  for (const k of ['bkash', 'nagad', 'usdtTrc20', 'usdtBep20']) if (b[k] !== undefined) o[k] = S(b[k], 200);
-  for (const k of ['noteBD', 'noteINT']) if (b[k] !== undefined) o[k] = S(b[k], 500);
-  if (!Object.keys(o).length) throw httpError(400, 'বদলানোর মতো কিছু নেই');
-  await db.doc('settings/payment').set(o, { merge: true });
-  res.json({ ok: true }); // পেমেন্ট তথ্য সর্বোচ্চ ১ মিনিটে নতুন দেখাবে
+router.get('/env-check', (req, res) => res.json(checkEnv({ log: false })));
+
+// ডেমো ডাটা (পরীক্ষার জন্য) বসানো/মোছা
+router.post('/seed-demo', asyncHandler(async (req, res) => {
+  await seedDemo();
+  res.json({ ok: true });
+}));
+router.delete('/seed-demo', asyncHandler(async (req, res) => {
+  await removeDemo();
+  res.json({ ok: true });
 }));
 
 // ================= সাপোর্ট =================
