@@ -1,0 +1,51 @@
+<!-- FILE: index.html | PATH: client/index.html (রিপোর client ফোল্ডারে) -->
+<!doctype html>
+<!-- দ্রষ্টব্য: title, description, og, twitter ট্যাগ property/name আগে লিখে লেখা, কারণ server/routes/share.js
+     এগুলো সরিয়ে প্রতিটি প্রোডাক্টের নিজের ট্যাগ বসায়। ফরম্যাট বদলাবেন না এবং এই মন্তব্যে কোনো ট্যাগের নাম (কোণা বন্ধনীসহ) লিখবেন না। -->
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0b10" />
+    <meta name="color-scheme" content="dark" />
+
+    <title>MangaBooka</title>
+    <meta name="description" content="মাঙ্গা ও ই-বুক কিনুন, মোবাইলেই পড়ুন। Buy and read manga and ebooks on your phone." />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MangaBooka" />
+    <meta property="og:title" content="MangaBooka" />
+    <meta property="og:description" content="মাঙ্গা ও ই-বুক কিনুন, মোবাইলেই পড়ুন।" />
+    <meta property="og:image" content="/icons/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="MangaBooka" />
+    <meta name="twitter:description" content="মাঙ্গা ও ই-বুক কিনুন, মোবাইলেই পড়ুন।" />
+    <meta name="twitter:image" content="/icons/og-image.png" />
+
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="/icons/favicon.png" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="MangaBooka" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <style>
+      /* অ্যাপ লোড হওয়ার আগের পর্দা: সাদা ঝলক ও ফাঁকা পর্দা ঠেকায় */
+      html, body { margin: 0; background: #0b0b10; }
+      #root { min-height: 100vh; min-height: 100dvh; }
+      .mb-boot { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; background: #0b0b10; color: #e8e8f0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Bengali", sans-serif; }
+      .mb-boot b { font-size: 22px; letter-spacing: 0.5px; }
+      .mb-boot i { width: 26px; height: 26px; border: 3px solid #2a2a38; border-top-color: #8b8bff; border-radius: 50%; animation: mb-spin 0.8s linear infinite; }
+      @keyframes mb-spin { to { transform: rotate(360deg); } }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="mb-boot"><b>MangaBooka</b><i></i></div>
+    </div>
+    <noscript>এই সাইট চালাতে JavaScript চালু করতে হবে। Please enable JavaScript.</noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+      </html>
