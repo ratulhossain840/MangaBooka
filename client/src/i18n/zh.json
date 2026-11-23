@@ -1,0 +1,440 @@
+{
+  "//": "FILE: zh.json | PATH: client/src/i18n/zh.json | 规则: 键必须与 en.json 完全一致，{n} 等占位符不要改动",
+  "app": {
+    "name": "MangaBooka",
+    "tagline": "用手机阅读漫画和电子书"
+  },
+  "common": {
+    "loading": "加载中…",
+    "retry": "重试",
+    "cancel": "取消",
+    "close": "关闭",
+    "save": "保存",
+    "back": "返回",
+    "next": "下一步",
+    "previous": "上一步",
+    "search": "搜索",
+    "searchPlaceholder": "搜索漫画或电子书",
+    "seeAll": "查看全部",
+    "loadMore": "加载更多",
+    "copy": "复制",
+    "copied": "已复制",
+    "share": "分享",
+    "ok": "好的",
+    "yes": "是",
+    "no": "否",
+    "remove": "移除",
+    "continue": "继续",
+    "or": "或",
+    "required": "必填",
+    "optional": "选填",
+    "noResults": "未找到内容",
+    "offline": "您当前处于离线状态",
+    "done": "完成",
+    "send": "发送",
+    "submit": "提交",
+    "open": "打开",
+    "download": "下载"
+  },
+  "nav": {
+    "home": "首页",
+    "manga": "漫画",
+    "ebook": "电子书",
+    "library": "书库",
+    "profile": "我的",
+    "cart": "购物车",
+    "orders": "我的订单",
+    "support": "客服",
+    "login": "登录",
+    "register": "注册",
+    "logout": "退出登录",
+    "language": "语言",
+    "country": "国家"
+  },
+  "home": {
+    "heroTitle": "发现你的下一个心头好",
+    "heroSub": "一次购买，随时随地用手机阅读",
+    "shopManga": "漫画",
+    "shopEbook": "电子书",
+    "featured": "精选",
+    "new": "新品上架",
+    "trending": "热门",
+    "sale": "优惠中",
+    "empty": "暂无商品，请稍后再来看看。"
+  },
+  "shop": {
+    "mangaTitle": "漫画",
+    "ebookTitle": "电子书",
+    "all": "全部",
+    "sortBy": "排序",
+    "sort": {
+      "default": "推荐",
+      "new": "最新",
+      "popular": "最受欢迎",
+      "price_asc": "价格从低到高",
+      "price_desc": "价格从高到低"
+    },
+    "category": "分类",
+    "count": "共 {n} 件",
+    "empty": "未找到商品",
+    "endOfList": "已经到底了"
+  },
+  "card": {
+    "badge": {
+      "new": "新品",
+      "sale": "优惠",
+      "featured": "精选",
+      "bestseller": "畅销"
+    },
+    "sold": "{n}+ 人已购买",
+    "off": "立减 {n}%",
+    "chapters": "共 {n} 话",
+    "textNotReady": "暂无此语言的翻译",
+    "type": {
+      "manga": "漫画",
+      "ebook": "电子书"
+    }
+  },
+  "product": {
+    "buyNow": "立即购买",
+    "addToCart": "加入购物车",
+    "inCart": "已在购物车",
+    "goToCart": "去购物车",
+    "inLibrary": "已在您的书库中",
+    "read": "立即阅读",
+    "share": "分享",
+    "linkCopied": "链接已复制",
+    "whatYouLearn": "你将学到",
+    "description": "简介",
+    "toc": "目录",
+    "chapters": "章节",
+    "pages": "{n} 页",
+    "words": "{n} 字",
+    "formats": "可下载格式",
+    "related": "你可能还喜欢",
+    "like": "喜欢",
+    "dislike": "不喜欢",
+    "loginToReact": "登录后才能评价",
+    "offerEndsIn": "优惠结束倒计时",
+    "unavailable": "该商品在您所在的地区暂不可用",
+    "notFound": "未找到该商品",
+    "originalPrice": "原价",
+    "countdown": {
+      "d": "天",
+      "h": "小时",
+      "m": "分",
+      "s": "秒"
+    }
+  },
+  "cart": {
+    "title": "购物车",
+    "empty": "购物车是空的",
+    "emptySub": "添加您喜欢的作品吧",
+    "items": "{n} 件商品",
+    "total": "合计",
+    "remove": "移除",
+    "checkout": "去结算",
+    "keepShopping": "继续逛逛",
+    "digitalNote": "数字商品，无需运费",
+    "marketChanged": "因您所在地区变更，价格已更新，请重新核对购物车。",
+    "alreadyOwned": "已在您的书库中"
+  },
+  "checkout": {
+    "title": "结算",
+    "orderSummary": "订单摘要",
+    "payMethod": "支付方式",
+    "noMethod": "目前没有可用的支付方式",
+    "method": {
+      "bkash": "bKash",
+      "nagad": "Nagad",
+      "usdt_bep20": "USDT (BEP20)",
+      "usdt_erc20": "USDT (ERC20)"
+    },
+    "step1": "1. 转账付款",
+    "step2": "2. 填写交易编号",
+    "amount": "应付金额",
+    "number": "号码",
+    "address": "钱包地址",
+    "network": "网络",
+    "copyNumber": "复制号码",
+    "copyAddress": "复制地址",
+    "bdHow": "打开 {method} 应用，选择 Send Money，向上方号码转入相应金额，然后复制 TrxID。",
+    "intHow": "请通过 {network} 网络向上方地址转入价值 {amount} 的 USDT，然后复制交易哈希 (TXID)。",
+    "networkWarn": "请务必使用所选网络转账。转错网络的资金无法找回。",
+    "noFee": "本站不收取任何额外费用。应用或网络产生的手续费由您自行承担。",
+    "trxBD": "TrxID",
+    "trxBDHint": "付款后获得的编号",
+    "trxINT": "交易哈希 (TXID)",
+    "trxINTHint": "以 0x 开头，共 66 个字符",
+    "trxInvalid": "请检查交易编号",
+    "trxInvalidINT": "TXID 必须以 0x 开头，共 66 个字符",
+    "screenshot": "付款截图",
+    "screenshotHint": "选填，有助于更快确认",
+    "chooseImage": "选择图片",
+    "uploading": "上传中…",
+    "uploadFailed": "上传失败。不上传截图也可以提交订单。",
+    "removeImage": "移除图片",
+    "email": "电子邮箱（选填）",
+    "emailHint": "仅用于就此订单与您联系",
+    "submit": "提交订单",
+    "submitting": "提交中…",
+    "manualNote": "管理员会人工核对每一笔付款并确认订单。金额略有不足时，管理员仍可酌情确认。",
+    "guestNote": "无需登录即可购买。下单后请保存您的订单码和密钥。",
+    "loginForLibrary": "登录后可在所有设备上使用您的书库",
+    "priceChanged": "价格已变动，请重新核对订单。"
+  },
+  "order": {
+    "successTitle": "已收到您的订单",
+    "successSub": "我们会核对您的付款并尽快确认。",
+    "code": "订单码",
+    "secret": "密钥",
+    "saveWarn": "请立即保存订单码和密钥。未登录购买时，阅读需要同时提供两者。密钥只显示一次。",
+    "savedOnDevice": "已同时保存在此设备上",
+    "trackTitle": "查询订单",
+    "trackBtn": "查看状态",
+    "notFound": "未找到订单，请核对订单码和密钥。",
+    "myOrders": "我的订单",
+    "noOrders": "暂无订单",
+    "status": {
+      "pending": "审核中",
+      "confirmed": "已确认",
+      "rejected": "已拒绝"
+    },
+    "statusHelp": {
+      "pending": "我们正在核对您的付款。",
+      "confirmed": "付款已确认，现在可以阅读了。",
+      "rejected": "您的订单已被拒绝。"
+    },
+    "reason": "原因",
+    "placedOn": "下单时间",
+    "total": "合计",
+    "method": "支付方式",
+    "trx": "交易编号",
+    "items": "商品",
+    "openLibrary": "打开书库",
+    "readNow": "立即阅读",
+    "copyCode": "复制订单码",
+    "copySecret": "复制密钥",
+    "claimTitle": "将游客订单添加到账户",
+    "claimBtn": "添加到我的账户",
+    "claimOk": "订单已添加到您的账户",
+    "loginToClaim": "请登录后将此订单添加到账户"
+  },
+  "library": {
+    "title": "书库",
+    "empty": "这里还没有内容",
+    "emptySub": "订单确认后，您购买的商品会显示在这里。",
+    "read": "阅读",
+    "chaptersCount": "共 {n} 话",
+    "guestTitle": "未登录就购买了吗？",
+    "guestSub": "输入订单码和密钥即可打开您购买的内容。",
+    "openWithCode": "打开",
+    "orderCode": "订单码",
+    "secret": "密钥",
+    "savedHere": "保存在此设备上的购买记录",
+    "loginHint": "登录后可在所有设备上查看书库",
+    "waiting": "等待确认"
+  },
+  "reader": {
+    "contents": "目录",
+    "chapter": "第 {n} 话",
+    "page": "第 {a} / {b} 页",
+    "prev": "上一页",
+    "next": "下一页",
+    "prevChapter": "上一话",
+    "nextChapter": "下一话",
+    "fontSize": "字号",
+    "theme": "主题",
+    "themes": {
+      "dark": "深色",
+      "light": "浅色",
+      "sepia": "护眼黄"
+    },
+    "language": "阅读语言",
+    "download": "下载",
+    "downloadPdf": "下载 PDF",
+    "downloadEpub": "下载 EPUB",
+    "preparing": "正在生成文件…",
+    "downloadReady": "文件已准备好",
+    "downloadFailed": "无法生成文件",
+    "noAccess": "购买后才能阅读",
+    "pendingAccess": "订单确认后即可阅读",
+    "loadFailed": "无法加载本话内容",
+    "theEnd": "完",
+    "firstPage": "这是第一页",
+    "tapHint": "点击屏幕中间可显示或隐藏菜单"
+  },
+  "support": {
+    "title": "客服",
+    "intro": "订单、付款或其他问题，都可以在这里联系我们。",
+    "subject": "主题",
+    "message": "留言",
+    "email": "您的邮箱",
+    "emailHintGuest": "用于找到您的对话记录",
+    "orderCode": "订单码（选填）",
+    "send": "发送",
+    "sending": "发送中…",
+    "sent": "留言已发送。我们的回复会显示在这里。",
+    "mine": "我的留言",
+    "empty": "暂无留言",
+    "status": {
+      "open": "处理中",
+      "answered": "已回复",
+      "closed": "已关闭"
+    },
+    "you": "您",
+    "team": "MangaBooka 客服",
+    "reply": "回复",
+    "replyPlaceholder": "输入回复内容",
+    "newTicket": "新留言",
+    "limit": "此对话已达上限，请新建一条留言。",
+    "guestNote": "未登录时，您的留言会保存在此设备上。"
+  },
+  "auth": {
+    "login": "登录",
+    "register": "注册",
+    "email": "邮箱",
+    "password": "密码",
+    "confirmPassword": "确认密码",
+    "forgot": "忘记密码？",
+    "resetSent": "密码重置邮件已发送，请查看收件箱。",
+    "noAccount": "还没有账户？",
+    "haveAccount": "已有账户？",
+    "optionalNote": "登录是可选的。有账户后，您可以在所有设备上使用书库。",
+    "welcome": "欢迎回来",
+    "errors": {
+      "invalidEmail": "邮箱格式不正确",
+      "weakPassword": "密码至少需要 6 个字符",
+      "wrongCredentials": "邮箱或密码错误",
+      "emailInUse": "该邮箱已被注册",
+      "passwordMismatch": "两次输入的密码不一致",
+      "tooMany": "尝试次数过多，请稍后再试。",
+      "network": "网络连接失败，请检查网络。",
+      "disabled": "该账户已被停用",
+      "notConfigured": "暂时无法登录",
+      "generic": "登录失败，请重试。"
+    }
+  },
+  "profile": {
+    "title": "我的",
+    "loggedOutTitle": "您尚未登录",
+    "loggedOutSub": "没有账户也可以购买和阅读。",
+    "settings": "设置",
+    "help": "帮助与信息"
+  },
+  "install": {
+    "title": "安装 MangaBooka",
+    "desc": "添加到主屏幕，像应用一样快速打开。",
+    "button": "安装应用",
+    "ios": "在 iPhone 上：点击分享按钮，然后选择“添加到主屏幕”。",
+    "installed": "应用已安装"
+  },
+  "market": {
+    "country": "国家",
+    "chooseCountry": "选择您所在的国家",
+    "countries": {
+      "BD": "孟加拉国",
+      "JP": "日本",
+      "CN": "中国",
+      "SG": "新加坡",
+      "MY": "马来西亚",
+      "CL": "智利",
+      "OTHER": "其他"
+    },
+    "priceCurrency": "价格以 {currency} 显示"
+  },
+  "language": {
+    "title": "语言",
+    "fallbackNote": "部分文字暂未翻译成此语言。"
+  },
+  "errors": {
+    "generic": "出错了，请重试。",
+    "network": "网络连接失败，请检查网络。",
+    "timeout": "等待时间过长，请重试。",
+    "notFound": "未找到",
+    "pageNotFound": "此页面不存在",
+    "goHome": "返回首页",
+    "codes": {
+      "login_required": "请先登录",
+      "forbidden": "您没有访问权限",
+      "too_many_requests": "请求过于频繁，请稍后再试。",
+      "not_found": "未找到",
+      "not_available_in_market": "在您所在的地区暂不可用",
+      "server_error": "服务器出现问题，请稍后再试。",
+      "invalid_value": "数值无效"
+    }
+  },
+  "pages": {
+    "howto": {
+      "title": "购买方法",
+      "steps": [
+        "选择一部漫画或电子书，点击“立即购买”。",
+        "选择支付方式，并转入准确的金额。",
+        "复制交易编号（TrxID 或 TXID），在下单时粘贴填写。",
+        "管理员会人工核对付款并确认订单。",
+        "确认后，打开书库即可开始阅读。"
+      ]
+    },
+    "about": {
+      "title": "关于 MangaBooka",
+      "body": "MangaBooka 销售漫画和电子书（包括黑暗心理学类图书），可直接在手机上阅读。一次购买，永久保存在您的书库中。"
+    },
+    "faq": {
+      "title": "常见问题",
+      "items": [
+        {
+          "q": "需要注册账户吗？",
+          "a": "不需要。无需登录即可购买，只要保存好订单码和密钥。注册免费账户后，可在所有设备上使用书库。"
+        },
+        {
+          "q": "什么时候可以开始阅读？",
+          "a": "管理员确认付款后即可阅读，在此之前无法阅读。"
+        },
+        {
+          "q": "支持哪些支付方式？",
+          "a": "孟加拉国：bKash 和 Nagad。其他国家和地区：BEP20 或 ERC20 网络的 USDT。"
+        },
+        {
+          "q": "如果少转了一点怎么办？",
+          "a": "请联系客服。金额略有不足时，管理员可以人工确认。"
+        },
+        {
+          "q": "可以用哪些语言阅读？",
+          "a": "孟加拉语、英语、日语、中文、马来语和西班牙语。漫画图片中的文字保持原样。"
+        }
+      ]
+    },
+    "terms": {
+      "title": "使用条款",
+      "items": [
+        "商品均为数字商品，不会邮寄任何实物。",
+        "管理员确认付款后才可阅读。",
+        "内容仅供您个人阅读，请勿复制、转售或分享。",
+        "下单时显示的价格即为您需要支付的价格。",
+        "如无法核实付款，订单可能被拒绝或取消。"
+      ]
+    },
+    "privacy": {
+      "title": "隐私",
+      "items": [
+        "我们只保留必要的信息：您的订单、客服留言，以及注册时的邮箱。",
+        "我们使用您所在的国家来显示正确的货币和支付方式。",
+        "我们不会出售您的数据。",
+        "登录由 Firebase Authentication 处理，我们看不到您的密码。"
+      ]
+    },
+    "refund": {
+      "title": "退款与问题处理",
+      "items": [
+        "数字商品一经开通阅读权限，不支持退货。",
+        "如果文件或章节损坏、缺失，请联系客服，我们会修复。",
+        "订单被拒绝时不会开通阅读权限。请携带订单码联系客服。",
+        "如果您已付款但无法匹配，客服会根据交易编号协助您。"
+      ]
+    },
+    "contact": {
+      "title": "联系我们",
+      "body": "需要帮助？请从菜单打开客服。我们会在应用内回复您。"
+    }
+  }
+    }
