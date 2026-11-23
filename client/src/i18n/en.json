@@ -1,0 +1,440 @@
+{
+  "//": "FILE: en.json | PATH: client/src/i18n/en.json | নিয়ম: সব ভাষা ফাইলে একই কী থাকতে হবে, {n} এর মতো জায়গাগুলো বদলাবে না",
+  "app": {
+    "name": "MangaBooka",
+    "tagline": "Read manga and ebooks on your phone"
+  },
+  "common": {
+    "loading": "Loading…",
+    "retry": "Try again",
+    "cancel": "Cancel",
+    "close": "Close",
+    "save": "Save",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "searchPlaceholder": "Search manga or ebooks",
+    "seeAll": "See all",
+    "loadMore": "Load more",
+    "copy": "Copy",
+    "copied": "Copied",
+    "share": "Share",
+    "ok": "OK",
+    "yes": "Yes",
+    "no": "No",
+    "remove": "Remove",
+    "continue": "Continue",
+    "or": "or",
+    "required": "Required",
+    "optional": "Optional",
+    "noResults": "Nothing found",
+    "offline": "You are offline",
+    "done": "Done",
+    "send": "Send",
+    "submit": "Submit",
+    "open": "Open",
+    "download": "Download"
+  },
+  "nav": {
+    "home": "Home",
+    "manga": "Manga",
+    "ebook": "Ebooks",
+    "library": "Library",
+    "profile": "Profile",
+    "cart": "Cart",
+    "orders": "My orders",
+    "support": "Support",
+    "login": "Log in",
+    "register": "Sign up",
+    "logout": "Log out",
+    "language": "Language",
+    "country": "Country"
+  },
+  "home": {
+    "heroTitle": "Your next favourite story",
+    "heroSub": "Buy once, read anywhere on your phone",
+    "shopManga": "Manga",
+    "shopEbook": "Ebooks",
+    "featured": "Featured",
+    "new": "New arrivals",
+    "trending": "Popular",
+    "sale": "On offer",
+    "empty": "No products yet. Please check back soon."
+  },
+  "shop": {
+    "mangaTitle": "Manga",
+    "ebookTitle": "Ebooks",
+    "all": "All",
+    "sortBy": "Sort",
+    "sort": {
+      "default": "Recommended",
+      "new": "Newest",
+      "popular": "Most popular",
+      "price_asc": "Price: low to high",
+      "price_desc": "Price: high to low"
+    },
+    "category": "Category",
+    "count": "{n} items",
+    "empty": "No items found",
+    "endOfList": "You have seen everything"
+  },
+  "card": {
+    "badge": {
+      "new": "New",
+      "sale": "Offer",
+      "featured": "Featured",
+      "bestseller": "Bestseller"
+    },
+    "sold": "{n}+ bought",
+    "off": "{n}% off",
+    "chapters": "{n} chapters",
+    "textNotReady": "Not translated into this language yet",
+    "type": {
+      "manga": "Manga",
+      "ebook": "Ebook"
+    }
+  },
+  "product": {
+    "buyNow": "Buy now",
+    "addToCart": "Add to cart",
+    "inCart": "In cart",
+    "goToCart": "Go to cart",
+    "inLibrary": "In your library",
+    "read": "Read now",
+    "share": "Share",
+    "linkCopied": "Link copied",
+    "whatYouLearn": "What you will learn",
+    "description": "About this",
+    "toc": "Contents",
+    "chapters": "Chapters",
+    "pages": "{n} pages",
+    "words": "{n} words",
+    "formats": "Download formats",
+    "related": "You may also like",
+    "like": "Like",
+    "dislike": "Dislike",
+    "loginToReact": "Log in to like or dislike",
+    "offerEndsIn": "Offer ends in",
+    "unavailable": "This product is not available in your region",
+    "notFound": "Product not found",
+    "originalPrice": "Original price",
+    "countdown": {
+      "d": "d",
+      "h": "h",
+      "m": "m",
+      "s": "s"
+    }
+  },
+  "cart": {
+    "title": "Cart",
+    "empty": "Your cart is empty",
+    "emptySub": "Add something you like",
+    "items": "{n} items",
+    "total": "Total",
+    "remove": "Remove",
+    "checkout": "Checkout",
+    "keepShopping": "Keep shopping",
+    "digitalNote": "Digital products, no delivery charge",
+    "marketChanged": "Prices changed because your region changed. Please review your cart.",
+    "alreadyOwned": "Already in your library"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "orderSummary": "Order summary",
+    "payMethod": "Payment method",
+    "noMethod": "No payment method is available right now",
+    "method": {
+      "bkash": "bKash",
+      "nagad": "Nagad",
+      "usdt_bep20": "USDT (BEP20)",
+      "usdt_erc20": "USDT (ERC20)"
+    },
+    "step1": "1. Send the payment",
+    "step2": "2. Enter your transaction ID",
+    "amount": "Amount to pay",
+    "number": "Number",
+    "address": "Wallet address",
+    "network": "Network",
+    "copyNumber": "Copy number",
+    "copyAddress": "Copy address",
+    "bdHow": "Open your {method} app, choose Send Money, send the amount to the number above, then copy the TrxID.",
+    "intHow": "Send {amount} worth of USDT on the {network} network to the address above, then copy the transaction hash (TXID).",
+    "networkWarn": "Send only on the selected network. Funds sent on a wrong network cannot be recovered.",
+    "noFee": "This site adds no extra fee. Network or app charges are yours.",
+    "trxBD": "TrxID",
+    "trxBDHint": "The ID you get after paying",
+    "trxINT": "Transaction hash (TXID)",
+    "trxINTHint": "Starts with 0x and has 66 characters",
+    "trxInvalid": "Please check the transaction ID",
+    "trxInvalidINT": "TXID must start with 0x and have 66 characters",
+    "screenshot": "Payment screenshot",
+    "screenshotHint": "Optional, helps us confirm faster",
+    "chooseImage": "Choose image",
+    "uploading": "Uploading…",
+    "uploadFailed": "Upload failed. You can submit without it.",
+    "removeImage": "Remove image",
+    "email": "Email (optional)",
+    "emailHint": "Only used to contact you about this order",
+    "submit": "Submit order",
+    "submitting": "Submitting…",
+    "manualNote": "The admin checks every payment by hand and confirms your order. A small shortfall can still be confirmed by the admin.",
+    "guestNote": "You can buy without logging in. After ordering, save your order code and secret.",
+    "loginForLibrary": "Log in so your library is available on every device",
+    "priceChanged": "Prices changed. Please review your order."
+  },
+  "order": {
+    "successTitle": "Order received",
+    "successSub": "We will check your payment and confirm soon.",
+    "code": "Order code",
+    "secret": "Secret key",
+    "saveWarn": "Save the code and secret now. Without logging in, you need both to read your purchase. The secret is shown only once.",
+    "savedOnDevice": "Also saved on this device",
+    "trackTitle": "Track your order",
+    "trackBtn": "Check status",
+    "notFound": "Order not found. Check the code and secret.",
+    "myOrders": "My orders",
+    "noOrders": "No orders yet",
+    "status": {
+      "pending": "Under review",
+      "confirmed": "Confirmed",
+      "rejected": "Rejected"
+    },
+    "statusHelp": {
+      "pending": "We are checking your payment.",
+      "confirmed": "Payment confirmed. You can read it now.",
+      "rejected": "Your order was rejected."
+    },
+    "reason": "Reason",
+    "placedOn": "Placed on",
+    "total": "Total",
+    "method": "Method",
+    "trx": "Transaction ID",
+    "items": "Items",
+    "openLibrary": "Open library",
+    "readNow": "Read now",
+    "copyCode": "Copy code",
+    "copySecret": "Copy secret",
+    "claimTitle": "Add a guest order to your account",
+    "claimBtn": "Add to my account",
+    "claimOk": "Order added to your account",
+    "loginToClaim": "Log in to add this order to your account"
+  },
+  "library": {
+    "title": "Library",
+    "empty": "Nothing here yet",
+    "emptySub": "Products you buy appear here after your order is confirmed.",
+    "read": "Read",
+    "chaptersCount": "{n} chapters",
+    "guestTitle": "Bought without logging in?",
+    "guestSub": "Enter your order code and secret to open your purchase.",
+    "openWithCode": "Open",
+    "orderCode": "Order code",
+    "secret": "Secret key",
+    "savedHere": "Purchases saved on this device",
+    "loginHint": "Log in to see your library on every device",
+    "waiting": "Waiting for confirmation"
+  },
+  "reader": {
+    "contents": "Contents",
+    "chapter": "Chapter {n}",
+    "page": "Page {a} of {b}",
+    "prev": "Previous",
+    "next": "Next",
+    "prevChapter": "Previous chapter",
+    "nextChapter": "Next chapter",
+    "fontSize": "Text size",
+    "theme": "Theme",
+    "themes": {
+      "dark": "Dark",
+      "light": "Light",
+      "sepia": "Sepia"
+    },
+    "language": "Reading language",
+    "download": "Download",
+    "downloadPdf": "Download PDF",
+    "downloadEpub": "Download EPUB",
+    "preparing": "Preparing file…",
+    "downloadReady": "File ready",
+    "downloadFailed": "Could not create the file",
+    "noAccess": "Buy this to read it",
+    "pendingAccess": "You can read as soon as your order is confirmed",
+    "loadFailed": "Could not load this chapter",
+    "theEnd": "The end",
+    "firstPage": "This is the first page",
+    "tapHint": "Tap the middle of the screen to show or hide the menu"
+  },
+  "support": {
+    "title": "Support",
+    "intro": "Write to us about an order, a payment or anything else.",
+    "subject": "Subject",
+    "message": "Message",
+    "email": "Your email",
+    "emailHintGuest": "Needed so we can find your conversation",
+    "orderCode": "Order code (optional)",
+    "send": "Send",
+    "sending": "Sending…",
+    "sent": "Message sent. Our reply will appear here.",
+    "mine": "My messages",
+    "empty": "No messages yet",
+    "status": {
+      "open": "Open",
+      "answered": "Replied",
+      "closed": "Closed"
+    },
+    "you": "You",
+    "team": "MangaBooka Support",
+    "reply": "Reply",
+    "replyPlaceholder": "Write a reply",
+    "newTicket": "New message",
+    "limit": "This conversation is full. Please start a new one.",
+    "guestNote": "Without logging in, your messages are saved on this device."
+  },
+  "auth": {
+    "login": "Log in",
+    "register": "Sign up",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm password",
+    "forgot": "Forgot password?",
+    "resetSent": "Password reset email sent. Check your inbox.",
+    "noAccount": "No account yet?",
+    "haveAccount": "Already have an account?",
+    "optionalNote": "Logging in is optional. With an account your library is available on every device.",
+    "welcome": "Welcome back",
+    "errors": {
+      "invalidEmail": "That email address is not valid",
+      "weakPassword": "Password must be at least 6 characters",
+      "wrongCredentials": "Wrong email or password",
+      "emailInUse": "An account with this email already exists",
+      "passwordMismatch": "The two passwords do not match",
+      "tooMany": "Too many attempts. Wait a little and try again.",
+      "network": "No connection. Check your internet.",
+      "disabled": "This account has been disabled",
+      "notConfigured": "Login is not available right now",
+      "generic": "Could not log in. Please try again."
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "loggedOutTitle": "You are not logged in",
+    "loggedOutSub": "You can still buy and read without an account.",
+    "settings": "Settings",
+    "help": "Help and information"
+  },
+  "install": {
+    "title": "Install MangaBooka",
+    "desc": "Add it to your home screen for a faster, app-like experience.",
+    "button": "Install app",
+    "ios": "On iPhone: tap the Share button, then choose Add to Home Screen.",
+    "installed": "App installed"
+  },
+  "market": {
+    "country": "Country",
+    "chooseCountry": "Choose your country",
+    "countries": {
+      "BD": "Bangladesh",
+      "JP": "Japan",
+      "CN": "China",
+      "SG": "Singapore",
+      "MY": "Malaysia",
+      "CL": "Chile",
+      "OTHER": "Other"
+    },
+    "priceCurrency": "Prices in {currency}"
+  },
+  "language": {
+    "title": "Language",
+    "fallbackNote": "Some text is not translated into this language yet."
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again.",
+    "network": "No connection. Check your internet.",
+    "timeout": "It took too long. Please try again.",
+    "notFound": "Not found",
+    "pageNotFound": "This page does not exist",
+    "goHome": "Go to home",
+    "codes": {
+      "login_required": "Please log in first",
+      "forbidden": "You do not have access",
+      "too_many_requests": "Too many tries. Wait a little and try again.",
+      "not_found": "Not found",
+      "not_available_in_market": "Not available in your region",
+      "server_error": "Server problem. Please try again soon.",
+      "invalid_value": "Invalid value"
+    }
+  },
+  "pages": {
+    "howto": {
+      "title": "How to buy",
+      "steps": [
+        "Choose a manga or ebook and tap Buy now.",
+        "Pick a payment method and send the exact amount.",
+        "Copy the transaction ID (TrxID or TXID) and paste it with your order.",
+        "The admin checks your payment by hand and confirms the order.",
+        "After confirmation, open your Library and start reading."
+      ]
+    },
+    "about": {
+      "title": "About MangaBooka",
+      "body": "MangaBooka sells manga and ebooks, including dark psychology books, that you can read right on your phone. You buy a product once and it stays in your library."
+    },
+    "faq": {
+      "title": "Questions",
+      "items": [
+        {
+          "q": "Do I need an account?",
+          "a": "No. You can buy without logging in. Just save your order code and secret. A free account makes your library available on every device."
+        },
+        {
+          "q": "When can I start reading?",
+          "a": "Right after the admin confirms your payment. Nothing can be read before that."
+        },
+        {
+          "q": "Which payment methods work?",
+          "a": "Bangladesh: bKash and Nagad. Other countries: USDT on the BEP20 or ERC20 network."
+        },
+        {
+          "q": "What if I sent a little less?",
+          "a": "Contact Support. The admin can confirm a small shortfall by hand."
+        },
+        {
+          "q": "Which languages are available?",
+          "a": "Bengali, English, Japanese, Chinese, Malay and Spanish. Text inside manga pictures stays as it was drawn."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of use",
+      "items": [
+        "Products are digital. Nothing is shipped.",
+        "Access starts only after the admin confirms your payment.",
+        "Content is for your personal reading. Do not copy, resell or share it.",
+        "The price shown when you place your order is the price you pay.",
+        "An order can be refused or cancelled if the payment cannot be verified."
+      ]
+    },
+    "privacy": {
+      "title": "Privacy",
+      "items": [
+        "We keep only what is needed: your orders, your support messages and, if you sign up, your email.",
+        "We use your country to show the right currency and payment methods.",
+        "We do not sell your data.",
+        "Login is handled by Firebase Authentication. We never see your password."
+      ]
+    },
+    "refund": {
+      "title": "Refunds and problems",
+      "items": [
+        "Digital products cannot be returned once access is given.",
+        "If a file or chapter is broken or missing, contact Support and we will fix it.",
+        "If your order is rejected, no access is given. Contact Support with your order code.",
+        "If you paid but the payment cannot be matched, Support will help you using the transaction ID."
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "body": "Need help? Open Support from the menu. We reply inside the app."
+    }
+  }
+}
