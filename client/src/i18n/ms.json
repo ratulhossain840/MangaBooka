@@ -1,0 +1,440 @@
+{
+  "//": "FILE: ms.json | PATH: client/src/i18n/ms.json | Peraturan: kunci mesti sama dengan en.json, jangan ubah {n} dan seumpamanya",
+  "app": {
+    "name": "MangaBooka",
+    "tagline": "Baca manga dan e-buku di telefon anda"
+  },
+  "common": {
+    "loading": "Memuatkan…",
+    "retry": "Cuba lagi",
+    "cancel": "Batal",
+    "close": "Tutup",
+    "save": "Simpan",
+    "back": "Kembali",
+    "next": "Seterusnya",
+    "previous": "Sebelumnya",
+    "search": "Cari",
+    "searchPlaceholder": "Cari manga atau e-buku",
+    "seeAll": "Lihat semua",
+    "loadMore": "Muat lagi",
+    "copy": "Salin",
+    "copied": "Disalin",
+    "share": "Kongsi",
+    "ok": "OK",
+    "yes": "Ya",
+    "no": "Tidak",
+    "remove": "Buang",
+    "continue": "Teruskan",
+    "or": "atau",
+    "required": "Wajib",
+    "optional": "Pilihan",
+    "noResults": "Tiada hasil ditemui",
+    "offline": "Anda tidak dalam talian",
+    "done": "Selesai",
+    "send": "Hantar",
+    "submit": "Serah",
+    "open": "Buka",
+    "download": "Muat turun"
+  },
+  "nav": {
+    "home": "Utama",
+    "manga": "Manga",
+    "ebook": "E-buku",
+    "library": "Pustaka",
+    "profile": "Profil",
+    "cart": "Troli",
+    "orders": "Pesanan saya",
+    "support": "Sokongan",
+    "login": "Log masuk",
+    "register": "Daftar",
+    "logout": "Log keluar",
+    "language": "Bahasa",
+    "country": "Negara"
+  },
+  "home": {
+    "heroTitle": "Kisah kegemaran anda yang seterusnya",
+    "heroSub": "Beli sekali, baca di mana-mana dengan telefon anda",
+    "shopManga": "Manga",
+    "shopEbook": "E-buku",
+    "featured": "Pilihan",
+    "new": "Terbaru",
+    "trending": "Popular",
+    "sale": "Dalam tawaran",
+    "empty": "Belum ada produk. Sila semak semula nanti."
+  },
+  "shop": {
+    "mangaTitle": "Manga",
+    "ebookTitle": "E-buku",
+    "all": "Semua",
+    "sortBy": "Isih",
+    "sort": {
+      "default": "Disyorkan",
+      "new": "Terbaru",
+      "popular": "Paling popular",
+      "price_asc": "Harga: rendah ke tinggi",
+      "price_desc": "Harga: tinggi ke rendah"
+    },
+    "category": "Kategori",
+    "count": "{n} item",
+    "empty": "Tiada item ditemui",
+    "endOfList": "Anda sudah melihat semuanya"
+  },
+  "card": {
+    "badge": {
+      "new": "Baru",
+      "sale": "Tawaran",
+      "featured": "Pilihan",
+      "bestseller": "Terlaris"
+    },
+    "sold": "{n}+ telah membeli",
+    "off": "Diskaun {n}%",
+    "chapters": "{n} bab",
+    "textNotReady": "Belum diterjemahkan ke bahasa ini",
+    "type": {
+      "manga": "Manga",
+      "ebook": "E-buku"
+    }
+  },
+  "product": {
+    "buyNow": "Beli sekarang",
+    "addToCart": "Tambah ke troli",
+    "inCart": "Dalam troli",
+    "goToCart": "Ke troli",
+    "inLibrary": "Dalam pustaka anda",
+    "read": "Baca sekarang",
+    "share": "Kongsi",
+    "linkCopied": "Pautan disalin",
+    "whatYouLearn": "Apa yang akan anda pelajari",
+    "description": "Tentang produk ini",
+    "toc": "Kandungan",
+    "chapters": "Bab",
+    "pages": "{n} halaman",
+    "words": "{n} perkataan",
+    "formats": "Format muat turun",
+    "related": "Anda mungkin suka",
+    "like": "Suka",
+    "dislike": "Tidak suka",
+    "loginToReact": "Log masuk untuk memberi reaksi",
+    "offerEndsIn": "Tawaran tamat dalam",
+    "unavailable": "Produk ini tidak tersedia di kawasan anda",
+    "notFound": "Produk tidak ditemui",
+    "originalPrice": "Harga asal",
+    "countdown": {
+      "d": "h",
+      "h": "j",
+      "m": "m",
+      "s": "s"
+    }
+  },
+  "cart": {
+    "title": "Troli",
+    "empty": "Troli anda kosong",
+    "emptySub": "Tambah sesuatu yang anda suka",
+    "items": "{n} item",
+    "total": "Jumlah",
+    "remove": "Buang",
+    "checkout": "Bayar",
+    "keepShopping": "Teruskan membeli-belah",
+    "digitalNote": "Produk digital, tiada caj penghantaran",
+    "marketChanged": "Harga berubah kerana kawasan anda berubah. Sila semak troli anda.",
+    "alreadyOwned": "Sudah ada dalam pustaka anda"
+  },
+  "checkout": {
+    "title": "Pembayaran",
+    "orderSummary": "Ringkasan pesanan",
+    "payMethod": "Kaedah pembayaran",
+    "noMethod": "Tiada kaedah pembayaran tersedia buat masa ini",
+    "method": {
+      "bkash": "bKash",
+      "nagad": "Nagad",
+      "usdt_bep20": "USDT (BEP20)",
+      "usdt_erc20": "USDT (ERC20)"
+    },
+    "step1": "1. Hantar bayaran",
+    "step2": "2. Masukkan ID transaksi",
+    "amount": "Jumlah yang perlu dibayar",
+    "number": "Nombor",
+    "address": "Alamat dompet",
+    "network": "Rangkaian",
+    "copyNumber": "Salin nombor",
+    "copyAddress": "Salin alamat",
+    "bdHow": "Buka aplikasi {method} anda, pilih Send Money, hantar jumlah tersebut ke nombor di atas, kemudian salin TrxID.",
+    "intHow": "Hantar USDT bernilai {amount} melalui rangkaian {network} ke alamat di atas, kemudian salin cincang transaksi (TXID).",
+    "networkWarn": "Hantar hanya melalui rangkaian yang dipilih. Dana yang dihantar melalui rangkaian yang salah tidak dapat dipulihkan.",
+    "noFee": "Laman ini tidak mengenakan bayaran tambahan. Caj aplikasi atau rangkaian ditanggung oleh anda.",
+    "trxBD": "TrxID",
+    "trxBDHint": "ID yang anda terima selepas membayar",
+    "trxINT": "Cincang transaksi (TXID)",
+    "trxINTHint": "Bermula dengan 0x dan mempunyai 66 aksara",
+    "trxInvalid": "Sila semak ID transaksi",
+    "trxInvalidINT": "TXID mesti bermula dengan 0x dan mempunyai 66 aksara",
+    "screenshot": "Tangkapan skrin pembayaran",
+    "screenshotHint": "Pilihan, membantu kami mengesahkan lebih cepat",
+    "chooseImage": "Pilih imej",
+    "uploading": "Memuat naik…",
+    "uploadFailed": "Muat naik gagal. Anda masih boleh menyerahkan tanpanya.",
+    "removeImage": "Buang imej",
+    "email": "E-mel (pilihan)",
+    "emailHint": "Hanya digunakan untuk menghubungi anda tentang pesanan ini",
+    "submit": "Hantar pesanan",
+    "submitting": "Menghantar…",
+    "manualNote": "Pentadbir menyemak setiap pembayaran secara manual dan mengesahkan pesanan anda. Kekurangan kecil masih boleh disahkan oleh pentadbir.",
+    "guestNote": "Anda boleh membeli tanpa log masuk. Selepas membuat pesanan, simpan kod pesanan dan kunci rahsia anda.",
+    "loginForLibrary": "Log masuk supaya pustaka anda tersedia di semua peranti",
+    "priceChanged": "Harga telah berubah. Sila semak pesanan anda."
+  },
+  "order": {
+    "successTitle": "Pesanan diterima",
+    "successSub": "Kami akan menyemak pembayaran anda dan mengesahkannya tidak lama lagi.",
+    "code": "Kod pesanan",
+    "secret": "Kunci rahsia",
+    "saveWarn": "Simpan kod dan kunci rahsia sekarang. Tanpa log masuk, anda memerlukan kedua-duanya untuk membaca pembelian anda. Kunci rahsia hanya dipaparkan sekali.",
+    "savedOnDevice": "Turut disimpan pada peranti ini",
+    "trackTitle": "Jejak pesanan anda",
+    "trackBtn": "Semak status",
+    "notFound": "Pesanan tidak ditemui. Semak kod dan kunci rahsia.",
+    "myOrders": "Pesanan saya",
+    "noOrders": "Belum ada pesanan",
+    "status": {
+      "pending": "Dalam semakan",
+      "confirmed": "Disahkan",
+      "rejected": "Ditolak"
+    },
+    "statusHelp": {
+      "pending": "Kami sedang menyemak pembayaran anda.",
+      "confirmed": "Pembayaran disahkan. Anda boleh membaca sekarang.",
+      "rejected": "Pesanan anda telah ditolak."
+    },
+    "reason": "Sebab",
+    "placedOn": "Tarikh pesanan",
+    "total": "Jumlah",
+    "method": "Kaedah",
+    "trx": "ID transaksi",
+    "items": "Item",
+    "openLibrary": "Buka pustaka",
+    "readNow": "Baca sekarang",
+    "copyCode": "Salin kod",
+    "copySecret": "Salin kunci rahsia",
+    "claimTitle": "Tambah pesanan tetamu ke akaun anda",
+    "claimBtn": "Tambah ke akaun saya",
+    "claimOk": "Pesanan telah ditambah ke akaun anda",
+    "loginToClaim": "Log masuk untuk menambah pesanan ini ke akaun anda"
+  },
+  "library": {
+    "title": "Pustaka",
+    "empty": "Belum ada apa-apa di sini",
+    "emptySub": "Produk yang anda beli akan muncul di sini selepas pesanan disahkan.",
+    "read": "Baca",
+    "chaptersCount": "{n} bab",
+    "guestTitle": "Beli tanpa log masuk?",
+    "guestSub": "Masukkan kod pesanan dan kunci rahsia untuk membuka pembelian anda.",
+    "openWithCode": "Buka",
+    "orderCode": "Kod pesanan",
+    "secret": "Kunci rahsia",
+    "savedHere": "Pembelian yang disimpan pada peranti ini",
+    "loginHint": "Log masuk untuk melihat pustaka anda di semua peranti",
+    "waiting": "Menunggu pengesahan"
+  },
+  "reader": {
+    "contents": "Kandungan",
+    "chapter": "Bab {n}",
+    "page": "Halaman {a} daripada {b}",
+    "prev": "Sebelumnya",
+    "next": "Seterusnya",
+    "prevChapter": "Bab sebelumnya",
+    "nextChapter": "Bab seterusnya",
+    "fontSize": "Saiz teks",
+    "theme": "Tema",
+    "themes": {
+      "dark": "Gelap",
+      "light": "Cerah",
+      "sepia": "Sepia"
+    },
+    "language": "Bahasa bacaan",
+    "download": "Muat turun",
+    "downloadPdf": "Muat turun PDF",
+    "downloadEpub": "Muat turun EPUB",
+    "preparing": "Menyediakan fail…",
+    "downloadReady": "Fail sedia",
+    "downloadFailed": "Fail tidak dapat dicipta",
+    "noAccess": "Beli untuk membaca",
+    "pendingAccess": "Anda boleh membaca sebaik sahaja pesanan anda disahkan",
+    "loadFailed": "Bab ini tidak dapat dimuatkan",
+    "theEnd": "Tamat",
+    "firstPage": "Ini halaman pertama",
+    "tapHint": "Ketik bahagian tengah skrin untuk menunjuk atau menyembunyikan menu"
+  },
+  "support": {
+    "title": "Sokongan",
+    "intro": "Tulis kepada kami tentang pesanan, pembayaran atau apa-apa sahaja.",
+    "subject": "Subjek",
+    "message": "Mesej",
+    "email": "E-mel anda",
+    "emailHintGuest": "Diperlukan supaya kami dapat mencari perbualan anda",
+    "orderCode": "Kod pesanan (pilihan)",
+    "send": "Hantar",
+    "sending": "Menghantar…",
+    "sent": "Mesej dihantar. Balasan kami akan muncul di sini.",
+    "mine": "Mesej saya",
+    "empty": "Belum ada mesej",
+    "status": {
+      "open": "Terbuka",
+      "answered": "Dibalas",
+      "closed": "Ditutup"
+    },
+    "you": "Anda",
+    "team": "Sokongan MangaBooka",
+    "reply": "Balas",
+    "replyPlaceholder": "Tulis balasan",
+    "newTicket": "Mesej baharu",
+    "limit": "Perbualan ini sudah penuh. Sila mulakan yang baharu.",
+    "guestNote": "Tanpa log masuk, mesej anda disimpan pada peranti ini."
+  },
+  "auth": {
+    "login": "Log masuk",
+    "register": "Daftar",
+    "email": "E-mel",
+    "password": "Kata laluan",
+    "confirmPassword": "Sahkan kata laluan",
+    "forgot": "Lupa kata laluan?",
+    "resetSent": "E-mel set semula kata laluan telah dihantar. Semak peti masuk anda.",
+    "noAccount": "Belum ada akaun?",
+    "haveAccount": "Sudah ada akaun?",
+    "optionalNote": "Log masuk adalah pilihan. Dengan akaun, pustaka anda tersedia di semua peranti.",
+    "welcome": "Selamat kembali",
+    "errors": {
+      "invalidEmail": "Alamat e-mel tidak sah",
+      "weakPassword": "Kata laluan mesti sekurang-kurangnya 6 aksara",
+      "wrongCredentials": "E-mel atau kata laluan salah",
+      "emailInUse": "Akaun dengan e-mel ini sudah wujud",
+      "passwordMismatch": "Kedua-dua kata laluan tidak sepadan",
+      "tooMany": "Terlalu banyak percubaan. Tunggu sebentar dan cuba lagi.",
+      "network": "Tiada sambungan. Semak internet anda.",
+      "disabled": "Akaun ini telah dinyahaktifkan",
+      "notConfigured": "Log masuk tidak tersedia buat masa ini",
+      "generic": "Tidak dapat log masuk. Sila cuba lagi."
+    }
+  },
+  "profile": {
+    "title": "Profil",
+    "loggedOutTitle": "Anda belum log masuk",
+    "loggedOutSub": "Anda masih boleh membeli dan membaca tanpa akaun.",
+    "settings": "Tetapan",
+    "help": "Bantuan dan maklumat"
+  },
+  "install": {
+    "title": "Pasang MangaBooka",
+    "desc": "Tambah ke skrin utama untuk pengalaman yang lebih pantas seperti aplikasi.",
+    "button": "Pasang aplikasi",
+    "ios": "Pada iPhone: ketik butang Kongsi, kemudian pilih Add to Home Screen.",
+    "installed": "Aplikasi telah dipasang"
+  },
+  "market": {
+    "country": "Negara",
+    "chooseCountry": "Pilih negara anda",
+    "countries": {
+      "BD": "Bangladesh",
+      "JP": "Jepun",
+      "CN": "China",
+      "SG": "Singapura",
+      "MY": "Malaysia",
+      "CL": "Chile",
+      "OTHER": "Lain-lain"
+    },
+    "priceCurrency": "Harga dalam {currency}"
+  },
+  "language": {
+    "title": "Bahasa",
+    "fallbackNote": "Sesetengah teks belum diterjemahkan ke bahasa ini."
+  },
+  "errors": {
+    "generic": "Sesuatu telah berlaku. Sila cuba lagi.",
+    "network": "Tiada sambungan. Semak internet anda.",
+    "timeout": "Mengambil masa terlalu lama. Sila cuba lagi.",
+    "notFound": "Tidak ditemui",
+    "pageNotFound": "Halaman ini tidak wujud",
+    "goHome": "Ke halaman utama",
+    "codes": {
+      "login_required": "Sila log masuk dahulu",
+      "forbidden": "Anda tidak mempunyai akses",
+      "too_many_requests": "Terlalu banyak percubaan. Tunggu sebentar dan cuba lagi.",
+      "not_found": "Tidak ditemui",
+      "not_available_in_market": "Tidak tersedia di kawasan anda",
+      "server_error": "Masalah pelayan. Sila cuba lagi sebentar nanti.",
+      "invalid_value": "Nilai tidak sah"
+    }
+  },
+  "pages": {
+    "howto": {
+      "title": "Cara membeli",
+      "steps": [
+        "Pilih manga atau e-buku dan ketik Beli sekarang.",
+        "Pilih kaedah pembayaran dan hantar jumlah yang tepat.",
+        "Salin ID transaksi (TrxID atau TXID) dan tampalkannya bersama pesanan anda.",
+        "Pentadbir menyemak pembayaran anda secara manual dan mengesahkan pesanan.",
+        "Selepas pengesahan, buka Pustaka dan mula membaca."
+      ]
+    },
+    "about": {
+      "title": "Tentang MangaBooka",
+      "body": "MangaBooka menjual manga dan e-buku, termasuk buku psikologi gelap, yang boleh dibaca terus di telefon anda. Anda membeli sesuatu produk sekali sahaja dan ia kekal dalam pustaka anda."
+    },
+    "faq": {
+      "title": "Soalan lazim",
+      "items": [
+        {
+          "q": "Adakah saya perlukan akaun?",
+          "a": "Tidak. Anda boleh membeli tanpa log masuk. Cuma simpan kod pesanan dan kunci rahsia anda. Akaun percuma menjadikan pustaka anda tersedia di semua peranti."
+        },
+        {
+          "q": "Bilakah saya boleh mula membaca?",
+          "a": "Sebaik sahaja pentadbir mengesahkan pembayaran anda. Tiada apa yang boleh dibaca sebelum itu."
+        },
+        {
+          "q": "Kaedah pembayaran apa yang boleh digunakan?",
+          "a": "Bangladesh: bKash dan Nagad. Negara lain: USDT pada rangkaian BEP20 atau ERC20."
+        },
+        {
+          "q": "Bagaimana jika saya menghantar kurang sedikit?",
+          "a": "Hubungi Sokongan. Pentadbir boleh mengesahkan kekurangan kecil secara manual."
+        },
+        {
+          "q": "Bahasa apa yang tersedia?",
+          "a": "Bengali, Inggeris, Jepun, Cina, Melayu dan Sepanyol. Teks di dalam gambar manga kekal seperti yang dilukis."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terma penggunaan",
+      "items": [
+        "Produk adalah digital. Tiada barang dihantar.",
+        "Akses bermula hanya selepas pentadbir mengesahkan pembayaran anda.",
+        "Kandungan adalah untuk bacaan peribadi anda. Jangan salin, jual semula atau kongsikannya.",
+        "Harga yang dipaparkan semasa anda membuat pesanan ialah harga yang anda bayar.",
+        "Pesanan boleh ditolak atau dibatalkan jika pembayaran tidak dapat disahkan."
+      ]
+    },
+    "privacy": {
+      "title": "Privasi",
+      "items": [
+        "Kami hanya menyimpan apa yang perlu: pesanan anda, mesej sokongan dan, jika anda mendaftar, e-mel anda.",
+        "Kami menggunakan negara anda untuk memaparkan mata wang dan kaedah pembayaran yang betul.",
+        "Kami tidak menjual data anda.",
+        "Log masuk dikendalikan oleh Firebase Authentication. Kami tidak pernah melihat kata laluan anda."
+      ]
+    },
+    "refund": {
+      "title": "Bayaran balik dan masalah",
+      "items": [
+        "Produk digital tidak boleh dipulangkan selepas akses diberikan.",
+        "Jika fail atau bab rosak atau tiada, hubungi Sokongan dan kami akan membetulkannya.",
+        "Jika pesanan anda ditolak, tiada akses diberikan. Hubungi Sokongan dengan kod pesanan anda.",
+        "Jika anda sudah membayar tetapi pembayaran tidak dapat dipadankan, Sokongan akan membantu anda menggunakan ID transaksi."
+      ]
+    },
+    "contact": {
+      "title": "Hubungi kami",
+      "body": "Perlukan bantuan? Buka Sokongan daripada menu. Kami membalas di dalam aplikasi."
+    }
+  }
+  }
