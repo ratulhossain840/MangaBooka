@@ -1,0 +1,64 @@
+/* FILE: theme.css */
+/* PATH: client/src/styles/theme.css (রিপোতে client/src/styles ফোল্ডারের ভেতরে) */
+/* কাজ: সাইটের রঙ, ফন্ট, মাপ, দূরত্বের সব মান এক জায়গায়। রঙ বদলাতে চাইলে শুধু এই ফাইল বদলাও। */
+
+:root {
+  color-scheme: dark;
+
+  /* পটভূমি (গাঢ় থেকে হালকা) */
+  --bg: #0b0b10;
+  --bg-2: #12121a;
+  --surface: #181824;
+  --surface-2: #20202f;
+  --border: #2a2a3b;
+
+  /* লেখা */
+  --text: #e8e8f0;
+  --text-2: #a9a9bd;
+  --text-3: #74748a;
+
+  /* অ্যাকসেন্ট ও অবস্থার রঙ */
+  --accent: #8b8bff;
+  --accent-2: #6d6df0;
+  --on-accent: #0b0b10;
+  --ok: #4ade80;
+  --warn: #fbbf24;
+  --danger: #f87171;
+  --sale: #ff6b8b;
+  --gold: #f5c451;
+
+  /* মাপ */
+  --radius-s: 8px;
+  --radius: 14px;
+  --radius-l: 22px;
+  --gap: 12px;
+  --pad: 16px;
+  --nav-h: 56px;
+  --bottom-nav-h: 60px;
+  --buybar-h: 72px;
+  --max-w: 760px;
+  --shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+
+  /* নেভিগেশন বারের নিচে আইফোনের নিরাপদ জায়গা */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+
+  /* ফন্ট: সিস্টেম ফন্ট, ভাষা অনুযায়ী ফলব্যাক (ওয়েব ফন্ট নামে না, তাই দ্রুত ও অফলাইনে চলে) */
+  --font: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans Bengali', 'Hind Siliguri', 'Noto Sans JP',
+    'Hiragino Sans', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans', Arial, sans-serif;
+  --font-read: Georgia, 'Noto Serif Bengali', 'Noto Serif', 'Hiragino Mincho ProN', 'Songti SC', serif;
+
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* ভাষা অনুযায়ী লাইনের উচ্চতা (বাংলা ও জাপানি/চীনা অক্ষর একটু বেশি জায়গা চায়) */
+:root[lang='bn'] {
+  --lh: 1.65;
+}
+:root[lang='ja'],
+:root[lang='zh'] {
+  --lh: 1.7;
+}
+:root {
+  --lh: 1.5;
+}
