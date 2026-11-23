@@ -1,0 +1,440 @@
+{
+  "//": "FILE: es.json | PATH: client/src/i18n/es.json | Regla: las claves deben ser idénticas a en.json, no cambies {n} ni similares",
+  "app": {
+    "name": "MangaBooka",
+    "tagline": "Lee manga y ebooks en tu teléfono"
+  },
+  "common": {
+    "loading": "Cargando…",
+    "retry": "Reintentar",
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "save": "Guardar",
+    "back": "Volver",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "search": "Buscar",
+    "searchPlaceholder": "Buscar manga o ebooks",
+    "seeAll": "Ver todo",
+    "loadMore": "Cargar más",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "share": "Compartir",
+    "ok": "Aceptar",
+    "yes": "Sí",
+    "no": "No",
+    "remove": "Quitar",
+    "continue": "Continuar",
+    "or": "o",
+    "required": "Obligatorio",
+    "optional": "Opcional",
+    "noResults": "No se encontró nada",
+    "offline": "Estás sin conexión",
+    "done": "Listo",
+    "send": "Enviar",
+    "submit": "Enviar",
+    "open": "Abrir",
+    "download": "Descargar"
+  },
+  "nav": {
+    "home": "Inicio",
+    "manga": "Manga",
+    "ebook": "Ebooks",
+    "library": "Biblioteca",
+    "profile": "Perfil",
+    "cart": "Carrito",
+    "orders": "Mis pedidos",
+    "support": "Soporte",
+    "login": "Iniciar sesión",
+    "register": "Crear cuenta",
+    "logout": "Cerrar sesión",
+    "language": "Idioma",
+    "country": "País"
+  },
+  "home": {
+    "heroTitle": "Tu próxima historia favorita",
+    "heroSub": "Compra una vez y lee donde quieras desde tu teléfono",
+    "shopManga": "Manga",
+    "shopEbook": "Ebooks",
+    "featured": "Destacados",
+    "new": "Novedades",
+    "trending": "Populares",
+    "sale": "En oferta",
+    "empty": "Aún no hay productos. Vuelve a revisar pronto."
+  },
+  "shop": {
+    "mangaTitle": "Manga",
+    "ebookTitle": "Ebooks",
+    "all": "Todos",
+    "sortBy": "Ordenar",
+    "sort": {
+      "default": "Recomendados",
+      "new": "Más recientes",
+      "popular": "Más populares",
+      "price_asc": "Precio: menor a mayor",
+      "price_desc": "Precio: mayor a menor"
+    },
+    "category": "Categoría",
+    "count": "{n} artículos",
+    "empty": "No se encontraron artículos",
+    "endOfList": "Ya viste todo"
+  },
+  "card": {
+    "badge": {
+      "new": "Nuevo",
+      "sale": "Oferta",
+      "featured": "Destacado",
+      "bestseller": "Más vendido"
+    },
+    "sold": "{n}+ compradores",
+    "off": "{n}% de descuento",
+    "chapters": "{n} capítulos",
+    "textNotReady": "Aún no está traducido a este idioma",
+    "type": {
+      "manga": "Manga",
+      "ebook": "Ebook"
+    }
+  },
+  "product": {
+    "buyNow": "Comprar ahora",
+    "addToCart": "Añadir al carrito",
+    "inCart": "En el carrito",
+    "goToCart": "Ir al carrito",
+    "inLibrary": "En tu biblioteca",
+    "read": "Leer ahora",
+    "share": "Compartir",
+    "linkCopied": "Enlace copiado",
+    "whatYouLearn": "Lo que aprenderás",
+    "description": "Acerca de este producto",
+    "toc": "Contenido",
+    "chapters": "Capítulos",
+    "pages": "{n} páginas",
+    "words": "{n} palabras",
+    "formats": "Formatos de descarga",
+    "related": "También te puede gustar",
+    "like": "Me gusta",
+    "dislike": "No me gusta",
+    "loginToReact": "Inicia sesión para reaccionar",
+    "offerEndsIn": "La oferta termina en",
+    "unavailable": "Este producto no está disponible en tu región",
+    "notFound": "Producto no encontrado",
+    "originalPrice": "Precio original",
+    "countdown": {
+      "d": "d",
+      "h": "h",
+      "m": "min",
+      "s": "s"
+    }
+  },
+  "cart": {
+    "title": "Carrito",
+    "empty": "Tu carrito está vacío",
+    "emptySub": "Añade algo que te guste",
+    "items": "{n} artículos",
+    "total": "Total",
+    "remove": "Quitar",
+    "checkout": "Pagar",
+    "keepShopping": "Seguir comprando",
+    "digitalNote": "Productos digitales, sin costo de envío",
+    "marketChanged": "Los precios cambiaron porque tu región cambió. Revisa tu carrito.",
+    "alreadyOwned": "Ya está en tu biblioteca"
+  },
+  "checkout": {
+    "title": "Pago",
+    "orderSummary": "Resumen del pedido",
+    "payMethod": "Método de pago",
+    "noMethod": "No hay métodos de pago disponibles por ahora",
+    "method": {
+      "bkash": "bKash",
+      "nagad": "Nagad",
+      "usdt_bep20": "USDT (BEP20)",
+      "usdt_erc20": "USDT (ERC20)"
+    },
+    "step1": "1. Envía el pago",
+    "step2": "2. Ingresa el ID de la transacción",
+    "amount": "Monto a pagar",
+    "number": "Número",
+    "address": "Dirección de la billetera",
+    "network": "Red",
+    "copyNumber": "Copiar número",
+    "copyAddress": "Copiar dirección",
+    "bdHow": "Abre tu app {method}, elige Send Money, envía el monto al número de arriba y luego copia el TrxID.",
+    "intHow": "Envía USDT por un valor de {amount} en la red {network} a la dirección de arriba y luego copia el hash de la transacción (TXID).",
+    "networkWarn": "Envía solo por la red seleccionada. Los fondos enviados por una red equivocada no se pueden recuperar.",
+    "noFee": "Este sitio no cobra comisiones adicionales. Los cargos de la app o de la red corren por tu cuenta.",
+    "trxBD": "TrxID",
+    "trxBDHint": "El ID que recibes después de pagar",
+    "trxINT": "Hash de la transacción (TXID)",
+    "trxINTHint": "Empieza con 0x y tiene 66 caracteres",
+    "trxInvalid": "Revisa el ID de la transacción",
+    "trxInvalidINT": "El TXID debe empezar con 0x y tener 66 caracteres",
+    "screenshot": "Captura del pago",
+    "screenshotHint": "Opcional, nos ayuda a confirmar más rápido",
+    "chooseImage": "Elegir imagen",
+    "uploading": "Subiendo…",
+    "uploadFailed": "No se pudo subir. Puedes enviar el pedido sin ella.",
+    "removeImage": "Quitar imagen",
+    "email": "Correo electrónico (opcional)",
+    "emailHint": "Solo se usa para contactarte sobre este pedido",
+    "submit": "Enviar pedido",
+    "submitting": "Enviando…",
+    "manualNote": "El administrador revisa cada pago a mano y confirma tu pedido. Una pequeña diferencia a menos aún puede ser confirmada por el administrador.",
+    "guestNote": "Puedes comprar sin iniciar sesión. Después de pedir, guarda tu código de pedido y tu clave secreta.",
+    "loginForLibrary": "Inicia sesión para tener tu biblioteca en todos tus dispositivos",
+    "priceChanged": "Los precios cambiaron. Revisa tu pedido."
+  },
+  "order": {
+    "successTitle": "Pedido recibido",
+    "successSub": "Revisaremos tu pago y lo confirmaremos pronto.",
+    "code": "Código de pedido",
+    "secret": "Clave secreta",
+    "saveWarn": "Guarda el código y la clave ahora. Sin iniciar sesión, necesitas ambos para leer tu compra. La clave secreta se muestra una sola vez.",
+    "savedOnDevice": "También guardado en este dispositivo",
+    "trackTitle": "Sigue tu pedido",
+    "trackBtn": "Ver estado",
+    "notFound": "Pedido no encontrado. Revisa el código y la clave.",
+    "myOrders": "Mis pedidos",
+    "noOrders": "Aún no hay pedidos",
+    "status": {
+      "pending": "En revisión",
+      "confirmed": "Confirmado",
+      "rejected": "Rechazado"
+    },
+    "statusHelp": {
+      "pending": "Estamos revisando tu pago.",
+      "confirmed": "Pago confirmado. Ya puedes leer.",
+      "rejected": "Tu pedido fue rechazado."
+    },
+    "reason": "Motivo",
+    "placedOn": "Fecha del pedido",
+    "total": "Total",
+    "method": "Método",
+    "trx": "ID de la transacción",
+    "items": "Artículos",
+    "openLibrary": "Abrir biblioteca",
+    "readNow": "Leer ahora",
+    "copyCode": "Copiar código",
+    "copySecret": "Copiar clave",
+    "claimTitle": "Añadir un pedido de invitado a tu cuenta",
+    "claimBtn": "Añadir a mi cuenta",
+    "claimOk": "El pedido se añadió a tu cuenta",
+    "loginToClaim": "Inicia sesión para añadir este pedido a tu cuenta"
+  },
+  "library": {
+    "title": "Biblioteca",
+    "empty": "Aquí aún no hay nada",
+    "emptySub": "Los productos que compres aparecerán aquí cuando se confirme tu pedido.",
+    "read": "Leer",
+    "chaptersCount": "{n} capítulos",
+    "guestTitle": "¿Compraste sin iniciar sesión?",
+    "guestSub": "Ingresa tu código de pedido y tu clave secreta para abrir tu compra.",
+    "openWithCode": "Abrir",
+    "orderCode": "Código de pedido",
+    "secret": "Clave secreta",
+    "savedHere": "Compras guardadas en este dispositivo",
+    "loginHint": "Inicia sesión para ver tu biblioteca en todos tus dispositivos",
+    "waiting": "Esperando confirmación"
+  },
+  "reader": {
+    "contents": "Contenido",
+    "chapter": "Capítulo {n}",
+    "page": "Página {a} de {b}",
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "prevChapter": "Capítulo anterior",
+    "nextChapter": "Capítulo siguiente",
+    "fontSize": "Tamaño del texto",
+    "theme": "Tema",
+    "themes": {
+      "dark": "Oscuro",
+      "light": "Claro",
+      "sepia": "Sepia"
+    },
+    "language": "Idioma de lectura",
+    "download": "Descargar",
+    "downloadPdf": "Descargar PDF",
+    "downloadEpub": "Descargar EPUB",
+    "preparing": "Preparando el archivo…",
+    "downloadReady": "Archivo listo",
+    "downloadFailed": "No se pudo crear el archivo",
+    "noAccess": "Cómpralo para poder leerlo",
+    "pendingAccess": "Podrás leer en cuanto se confirme tu pedido",
+    "loadFailed": "No se pudo cargar este capítulo",
+    "theEnd": "Fin",
+    "firstPage": "Esta es la primera página",
+    "tapHint": "Toca el centro de la pantalla para mostrar u ocultar el menú"
+  },
+  "support": {
+    "title": "Soporte",
+    "intro": "Escríbenos sobre un pedido, un pago o cualquier otra cosa.",
+    "subject": "Asunto",
+    "message": "Mensaje",
+    "email": "Tu correo electrónico",
+    "emailHintGuest": "Lo necesitamos para encontrar tu conversación",
+    "orderCode": "Código de pedido (opcional)",
+    "send": "Enviar",
+    "sending": "Enviando…",
+    "sent": "Mensaje enviado. Nuestra respuesta aparecerá aquí.",
+    "mine": "Mis mensajes",
+    "empty": "Aún no hay mensajes",
+    "status": {
+      "open": "Abierto",
+      "answered": "Respondido",
+      "closed": "Cerrado"
+    },
+    "you": "Tú",
+    "team": "Soporte de MangaBooka",
+    "reply": "Responder",
+    "replyPlaceholder": "Escribe una respuesta",
+    "newTicket": "Nuevo mensaje",
+    "limit": "Esta conversación está llena. Inicia una nueva.",
+    "guestNote": "Si no inicias sesión, tus mensajes se guardan en este dispositivo."
+  },
+  "auth": {
+    "login": "Iniciar sesión",
+    "register": "Crear cuenta",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar contraseña",
+    "forgot": "¿Olvidaste tu contraseña?",
+    "resetSent": "Enviamos el correo para restablecer tu contraseña. Revisa tu bandeja de entrada.",
+    "noAccount": "¿Aún no tienes cuenta?",
+    "haveAccount": "¿Ya tienes una cuenta?",
+    "optionalNote": "Iniciar sesión es opcional. Con una cuenta, tu biblioteca estará en todos tus dispositivos.",
+    "welcome": "Te damos la bienvenida",
+    "errors": {
+      "invalidEmail": "Ese correo electrónico no es válido",
+      "weakPassword": "La contraseña debe tener al menos 6 caracteres",
+      "wrongCredentials": "Correo o contraseña incorrectos",
+      "emailInUse": "Ya existe una cuenta con este correo",
+      "passwordMismatch": "Las dos contraseñas no coinciden",
+      "tooMany": "Demasiados intentos. Espera un momento e inténtalo de nuevo.",
+      "network": "Sin conexión. Revisa tu internet.",
+      "disabled": "Esta cuenta ha sido deshabilitada",
+      "notConfigured": "El inicio de sesión no está disponible por ahora",
+      "generic": "No se pudo iniciar sesión. Inténtalo de nuevo."
+    }
+  },
+  "profile": {
+    "title": "Perfil",
+    "loggedOutTitle": "No has iniciado sesión",
+    "loggedOutSub": "Igualmente puedes comprar y leer sin una cuenta.",
+    "settings": "Ajustes",
+    "help": "Ayuda e información"
+  },
+  "install": {
+    "title": "Instalar MangaBooka",
+    "desc": "Agrégala a tu pantalla de inicio para una experiencia más rápida, como una app.",
+    "button": "Instalar app",
+    "ios": "En iPhone: toca el botón Compartir y elige Añadir a pantalla de inicio.",
+    "installed": "App instalada"
+  },
+  "market": {
+    "country": "País",
+    "chooseCountry": "Elige tu país",
+    "countries": {
+      "BD": "Bangladés",
+      "JP": "Japón",
+      "CN": "China",
+      "SG": "Singapur",
+      "MY": "Malasia",
+      "CL": "Chile",
+      "OTHER": "Otro"
+    },
+    "priceCurrency": "Precios en {currency}"
+  },
+  "language": {
+    "title": "Idioma",
+    "fallbackNote": "Parte del texto aún no está traducido a este idioma."
+  },
+  "errors": {
+    "generic": "Algo salió mal. Inténtalo de nuevo.",
+    "network": "Sin conexión. Revisa tu internet.",
+    "timeout": "Tardó demasiado. Inténtalo de nuevo.",
+    "notFound": "No encontrado",
+    "pageNotFound": "Esta página no existe",
+    "goHome": "Ir al inicio",
+    "codes": {
+      "login_required": "Primero inicia sesión",
+      "forbidden": "No tienes acceso",
+      "too_many_requests": "Demasiados intentos. Espera un momento e inténtalo de nuevo.",
+      "not_found": "No encontrado",
+      "not_available_in_market": "No disponible en tu región",
+      "server_error": "Problema en el servidor. Inténtalo de nuevo en un rato.",
+      "invalid_value": "Valor no válido"
+    }
+  },
+  "pages": {
+    "howto": {
+      "title": "Cómo comprar",
+      "steps": [
+        "Elige un manga o ebook y toca Comprar ahora.",
+        "Escoge un método de pago y envía el monto exacto.",
+        "Copia el ID de la transacción (TrxID o TXID) y pégalo en tu pedido.",
+        "El administrador revisa tu pago a mano y confirma el pedido.",
+        "Tras la confirmación, abre tu Biblioteca y empieza a leer."
+      ]
+    },
+    "about": {
+      "title": "Acerca de MangaBooka",
+      "body": "MangaBooka vende manga y ebooks, incluidos libros de psicología oscura, que puedes leer directamente en tu teléfono. Compras un producto una vez y se queda en tu biblioteca."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "items": [
+        {
+          "q": "¿Necesito una cuenta?",
+          "a": "No. Puedes comprar sin iniciar sesión; solo guarda tu código de pedido y tu clave secreta. Una cuenta gratuita deja tu biblioteca disponible en todos tus dispositivos."
+        },
+        {
+          "q": "¿Cuándo puedo empezar a leer?",
+          "a": "Justo después de que el administrador confirme tu pago. Antes de eso no se puede leer nada."
+        },
+        {
+          "q": "¿Qué métodos de pago funcionan?",
+          "a": "Bangladés: bKash y Nagad. Otros países: USDT en la red BEP20 o ERC20."
+        },
+        {
+          "q": "¿Y si envié un poco menos?",
+          "a": "Contacta a Soporte. El administrador puede confirmar a mano una pequeña diferencia."
+        },
+        {
+          "q": "¿En qué idiomas puedo leer?",
+          "a": "Bengalí, inglés, japonés, chino, malayo y español. El texto dentro de las imágenes del manga se queda como fue dibujado."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Términos de uso",
+      "items": [
+        "Los productos son digitales. No se envía nada físico.",
+        "El acceso comienza solo cuando el administrador confirma tu pago.",
+        "El contenido es para tu lectura personal. No lo copies, revendas ni compartas.",
+        "El precio que ves al hacer tu pedido es el que pagas.",
+        "Un pedido puede ser rechazado o cancelado si no se puede verificar el pago."
+      ]
+    },
+    "privacy": {
+      "title": "Privacidad",
+      "items": [
+        "Guardamos solo lo necesario: tus pedidos, tus mensajes de soporte y, si te registras, tu correo.",
+        "Usamos tu país para mostrar la moneda y los métodos de pago correctos.",
+        "No vendemos tus datos.",
+        "El inicio de sesión lo gestiona Firebase Authentication. Nunca vemos tu contraseña."
+      ]
+    },
+    "refund": {
+      "title": "Reembolsos y problemas",
+      "items": [
+        "Los productos digitales no se pueden devolver una vez dado el acceso.",
+        "Si un archivo o capítulo está dañado o falta, contacta a Soporte y lo arreglaremos.",
+        "Si tu pedido es rechazado, no se da acceso. Contacta a Soporte con tu código de pedido.",
+        "Si pagaste pero el pago no se puede relacionar, Soporte te ayudará con el ID de la transacción."
+      ]
+    },
+    "contact": {
+      "title": "Contacto",
+      "body": "¿Necesitas ayuda? Abre Soporte desde el menú. Respondemos dentro de la app."
+    }
+  }
+  }
