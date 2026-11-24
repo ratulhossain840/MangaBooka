@@ -1,6 +1,6 @@
 // FILE: orders.js
 // PATH: server/routes/orders.js
-// অর্ডার তৈরি, ট্র্যাকিং, নিজের অর্ডার তালিকা, গেস্ট অর্ডার নিজের অ্যাকাউন্টে নেওয়া
+// অর্ডার তৈরি, স্ক্রিনশট আপলোড, ট্র্যাকিং, নিজের অর্ডার তালিকা, গেস্ট অর্ডার নিজের অ্যাকাউন্টে নেওয়া
 
 import { Router } from 'express';
 import crypto from 'crypto';
@@ -172,6 +172,36 @@ router.post('/', limiter(10, 10), optionalAuth, asyncHandler(async (req, res) =>
 
   // secret শুধু এই একবারই পাওয়া যায়; গেস্ট ক্রেতা এটা দিয়ে অর্ডার দেখবে ও কনটেন্ট পড়বে
   res.status(201).json({ id: orderRef.id, orderCode: code, secret, currency, total });
+}));
+
+// ---------- পেমেন্ট স্ক্রিনশট আপলোড (ক্রেতার জন্য; imgbb কী সার্ভারেই থাকে, ব্রাউজারে যায় না) ----------
+// body: { image: "<base64, data: প্রিফিক্স ছাড়া>" } -> { url }। ক্লায়েন্ট ছবি ছোট করে পাঠায় (প্রায় ১ MB এর নিচে)।
+router.post('/screenshot', limiter(8, 10), asyncHandler(async (req, res) => {
+  const key = process.env.IMGBB_KEY;
+  if (!key) throw httpError(503, 'এখন ছবি আপলোড বন্ধ আছে');
+  const image = String((req.body && req.body.image) || '').replace(/^data:image\/[a-z+.-]+;base64,/i, '');
+  if (!image || image.length > 2_000_000 || !/^[A-Za-z0-9+/=]+$/.test(image)) throw httpError(400, 'ছবিটি ঠিক নয় বা বড় বেশি');
+  const ctl = new AbortController();
+  const timer = setTimeout(() => ctl.abort(), 20000);
+  let json;
+  try {
+    const r = await fetch('https://api.imgbb.com/1/upload?key=' + encodeURIComponent(key), {
+      method: 'POST',
+      headers: { 'content-type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ image }).toString(),
+      signal: ctl.signal,
+    });
+    json = await r.json().catch(() => null);
+    if (!r.ok || !json || !json.success) throw new Error('imgbb ' + r.status);
+  } catch (e) {
+    console.warn('[orders] screenshot upload failed:', e && e.message);
+    throw httpError(502, 'ছবি আপলোড হয়নি, আবার চেষ্টা করুন');
+  } finally {
+    clearTimeout(timer);
+  }
+  const url = json.data && (json.data.url || json.data.display_url);
+  if (!url) throw httpError(502, 'ছবি আপলোড হয়নি, আবার চেষ্টা করুন');
+  res.json({ url });
 }));
 
 // ---------- নিজের অর্ডার ----------
