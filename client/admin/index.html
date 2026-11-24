@@ -1,0 +1,38 @@
+<!-- FILE: index.html | PATH: client/admin/index.html (রিপোর client/admin ফোল্ডারে) -->
+<!doctype html>
+<!-- অ্যাডমিন প্যানেলের পেজ। সার্চ ইঞ্জিনে আসবে না (noindex)। ঠিকানা: আপনার-সাইট/admin -->
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b0b10" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <title>MangaBooka Admin</title>
+
+    <link rel="manifest" href="/admin-manifest.json" />
+    <link rel="icon" href="/icons/favicon.png" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="MB Admin" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <style>
+      html, body { margin: 0; background: #0b0b10; }
+      #root { min-height: 100vh; min-height: 100dvh; }
+      .mb-boot { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; background: #0b0b10; color: #e8e8f0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Bengali", sans-serif; }
+      .mb-boot b { font-size: 20px; letter-spacing: 0.5px; }
+      .mb-boot i { width: 26px; height: 26px; border: 3px solid #2a2a38; border-top-color: #8b8bff; border-radius: 50%; animation: mb-spin 0.8s linear infinite; }
+      @keyframes mb-spin { to { transform: rotate(360deg); } }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="mb-boot"><b>MangaBooka Admin</b><i></i></div>
+    </div>
+    <noscript>JavaScript চালু করতে হবে।</noscript>
+    <script type="module" src="/src/admin/main.jsx"></script>
+  </body>
+      </html>
