@@ -71,6 +71,7 @@ const routes = [
   ['/api/support', 'support.js'],
   ['/api/analytics', 'analytics.js'],
   ['/api/translate', 'translate.js'],
+  ['/api/notify', 'notify.js'],
   ['/api/admin', 'admin.js'],
   ['/p', 'share.js'], // প্রোডাক্ট শেয়ার লিংক
   ['/', 'sitemap.js'], // sitemap.xml ও robots.txt
