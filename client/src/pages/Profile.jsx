@@ -9,6 +9,7 @@ import { useMarket } from '../context/MarketContext.jsx';
 import { useAuth } from '../context/AuthContext.jsx';
 import LanguagePicker from '../components/LanguagePicker.jsx';
 import InstallButton from '../components/InstallButton.jsx';
+import PushToggle from '../components/PushToggle.jsx';
 
 const INFO = [
   ['/how-to', 'pages.howto.title'],
@@ -61,6 +62,7 @@ export default function Profile() {
           <span className="muted">{countryKey ? t('market.countries.' + countryKey) : t('nav.country')}</span>
         </button>
         <InstallButton />
+        <PushToggle />
       </section>
 
       <section className="stack">
@@ -86,4 +88,4 @@ export default function Profile() {
       <LanguagePicker open={pick} onClose={() => setPick(false)} />
     </div>
   );
-         }
+      }
