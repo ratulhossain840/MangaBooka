@@ -54,7 +54,7 @@ function Health() {
       <div className="row between">
         <b>Gemini অবস্থা</b>
         <HelpHint title="Gemini কী">
-          অনুবাদ Google Gemini দিয়ে হয়। Render এ GEMINI_API_KEYS (একাধিক হলে কমা দিয়ে) দেওয়া থাকতে হবে। চাবি ০টি দেখালে Render এর Environment এ দিন।
+          অনুবাদ Google Gemini দিয়ে হয়। Render এ GEMINI_KEYS (একাধিক হলে কমা দিয়ে) দেওয়া থাকতে হবে। চাবি ০টি দেখালে Render এর Environment এ দিন।
         </HelpHint>
       </div>
       {err && <span className="error-text">{err}</span>}
@@ -258,4 +258,4 @@ export default function TranslateStatus() {
       <Jobs products={products} rev={rev} />
     </div>
   );
-         }
+    }
