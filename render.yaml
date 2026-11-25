@@ -1,0 +1,56 @@
+# FILE: render.yaml
+# PATH: render.yaml (রিপোর মূল ফোল্ডারে)
+# কাজ: Render এ "Blueprint" দিয়ে এক ক্লিকে সার্ভিস বানাতে। হাতে সার্ভিস বানালে এই ফাইল না লাগলেও চলে (DEPLOY.md দেখুন)।
+# sync: false মানে মান এখানে লেখা নেই; Render এর Environment পেজে নিজে বসাতে হবে।
+services:
+  - type: web
+    name: mangabooka
+    runtime: node
+    region: singapore
+    plan: free
+    branch: main
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: NODE_ENV
+        value: production
+      - key: SITE_URL
+        sync: false
+      - key: FIREBASE_SERVICE_ACCOUNT
+        sync: false
+      - key: ADMIN_UIDS
+        sync: false
+      - key: IMGBB_KEY
+        sync: false
+      - key: GEMINI_KEYS
+        sync: false
+      - key: GEMINI_MODEL
+        sync: false
+      - key: PAY_BKASH
+        sync: false
+      - key: PAY_NAGAD
+        sync: false
+      - key: PAY_NOTE_BD
+        sync: false
+      - key: USDT_BEP20_ADDRESS
+        sync: false
+      - key: USDT_ERC20_ADDRESS
+        sync: false
+      - key: PAY_NOTE_INT
+        sync: false
+      - key: VITE_FIREBASE_API_KEY
+        sync: false
+      - key: VITE_FIREBASE_AUTH_DOMAIN
+        sync: false
+      - key: VITE_FIREBASE_PROJECT_ID
+        sync: false
+      - key: VITE_FIREBASE_APP_ID
+        sync: false
+      - key: VITE_FIREBASE_MESSAGING_SENDER_ID
+        sync: false
+      - key: VITE_FIREBASE_VAPID_KEY
+        sync: false
