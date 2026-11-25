@@ -10,6 +10,7 @@ import { checkDiscount, rulesOf } from '../utils/pricing.js';
 import { checkEnv } from '../scripts/checkEnv.js';
 import { seedDemo, removeDemo, bootSeed } from '../scripts/seed.js';
 import { requireAdmin, limiter, asyncHandler, httpError } from '../middleware/auth.js';
+import { pushToUser } from './notify.js';
 
 const router = Router();
 
@@ -150,6 +151,7 @@ router.post('/orders/:id/confirm', asyncHandler(async (req, res) => {
   }
   await batch.commit();
   invalidateAll();
+  if (order.userId) pushToUser(order.userId, { title: 'MangaBooka', body: `অর্ডার ${order.orderCode} কনফার্ম হয়েছে ✔ Order confirmed`, url: '/library', tag: 'order-' + ref.id });
   res.json({ ok: true });
 }));
 
@@ -168,6 +170,7 @@ router.post('/orders/:id/reject', asyncHandler(async (req, res) => {
     tx.update(ref, { status: 'rejected', rejectReason: reason, rejectedAt: FieldValue.serverTimestamp() });
     if (req.body?.releaseTx === true && order.trxKey) tx.delete(db.doc('usedTx/' + order.trxKey));
   });
+  if (order.userId) pushToUser(order.userId, { title: 'MangaBooka', body: `অর্ডার ${order.orderCode} বাতিল: ${reason}`, url: '/orders', tag: 'order-' + ref.id });
   res.json({ ok: true });
 }));
 
@@ -535,6 +538,7 @@ router.post('/support/:id/reply', asyncHandler(async (req, res) => {
     status: 'answered',
     updatedAt: FieldValue.serverTimestamp(),
   });
+  if (s.data().userId) pushToUser(s.data().userId, { title: 'MangaBooka', body: message.slice(0, 120), url: '/support', tag: 'ticket-' + ref.id });
   res.json({ ok: true });
 }));
 
