@@ -61,7 +61,7 @@ self.addEventListener('fetch', (event) => {
   }
 
   // আইকন, ম্যানিফেস্ট: ক্যাশ দেখায়, পেছনে নতুনটা আনে
-  if (p.startsWith('/icons/') || p === '/manifest.json') {
+  if (p.startsWith('/icons/') || p.startsWith('/bg/') || p === '/manifest.json') {
     event.respondWith(
       caches.open(STATIC).then((cache) =>
         cache.match(req).then((hit) => {
