@@ -13,6 +13,7 @@ import { createRoot } from 'react-dom/client';
 import.meta.glob('./i18n/index.js', { eager: true }); // ব্যাচ ৬
 import.meta.glob('./styles/theme.css', { eager: true }); // ব্যাচ ৮
 import.meta.glob('./styles/global.css', { eager: true }); // ব্যাচ ৮
+import.meta.glob('./styles/anime.css', { eager: true }); // ব্যাকগ্রাউন্ড ছবি
 const appModules = import.meta.glob('./App.jsx', { eager: true }); // ব্যাচ ৮
 const App = Object.values(appModules)[0]?.default;
 
@@ -100,4 +101,4 @@ if ('serviceWorker' in navigator && import.meta.env.PROD) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(() => {});
   });
-  }
+        }
