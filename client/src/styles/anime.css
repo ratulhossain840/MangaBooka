@@ -1,0 +1,64 @@
+/* FILE: anime.css */
+/* PATH: client/src/styles/anime.css (রিপোতে client/src/styles ফোল্ডারের ভেতরে) */
+/* কাজ: ক্রেতার সাইটে অ্যানিমে-স্টাইলের রাতের শহর ও সাকুরার ব্যাকগ্রাউন্ড ছবি (পড়তে অসুবিধা না হয় তাই উপরে গাঢ় পর্দা)। */
+/* ছবি বদলাতে: client/public/bg/ ফোল্ডারে একই নামে নিজের ছবি আপলোড করুন (anime-night-m.webp ফোনের জন্য লম্বা, anime-night-d.webp ডেস্কটপের জন্য চওড়া)। */
+/* ছবি বন্ধ করতে এই ফাইলের লেখা মুছে ফাঁকা করে দিন। */
+
+body {
+  background: #0b0b10;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: #0b0b10 url('/bg/anime-night-m.webp') center bottom / cover no-repeat;
+  transform: translateZ(0);
+}
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(11, 11, 16, 0.5) 0%, rgba(11, 11, 16, 0.72) 45%, rgba(11, 11, 16, 0.86) 100%);
+}
+@media (min-aspect-ratio: 1/1) {
+  body::before {
+    background-image: url('/bg/anime-night-d.webp');
+    background-position: center bottom;
+  }
+  body::after {
+    background: linear-gradient(180deg, rgba(11, 11, 16, 0.4) 0%, rgba(11, 11, 16, 0.65) 50%, rgba(11, 11, 16, 0.82) 100%);
+  }
+}
+
+/* ছবির ওপর লেখা যেন স্পষ্ট থাকে */
+h1,
+h2,
+h3 {
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
+}
+.topbar {
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* লোগোসহ নাম */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.brand img {
+  width: 30px;
+  height: 30px;
+  flex: none;
+  border-radius: 8px;
+}
+
+@media (prefers-reduced-data: reduce) {
+  body::before {
+    background-image: none;
+  }
+  }
