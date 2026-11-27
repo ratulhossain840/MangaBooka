@@ -177,7 +177,7 @@ router.post('/', limiter(10, 10), optionalAuth, asyncHandler(async (req, res) =>
 // ---------- পেমেন্ট স্ক্রিনশট আপলোড (ক্রেতার জন্য; imgbb কী সার্ভারেই থাকে, ব্রাউজারে যায় না) ----------
 // body: { image: "<base64, data: প্রিফিক্স ছাড়া>" } -> { url }। ক্লায়েন্ট ছবি ছোট করে পাঠায় (প্রায় ১ MB এর নিচে)।
 router.post('/screenshot', limiter(8, 10), asyncHandler(async (req, res) => {
-  const key = process.env.IMGBB_KEY;
+  const key = String(process.env.IMGBB_KEY || '').trim().replace(/^["']+|["']+$/g, '');
   if (!key) throw httpError(503, 'এখন ছবি আপলোড বন্ধ আছে');
   const image = String((req.body && req.body.image) || '').replace(/^data:image\/[a-z+.-]+;base64,/i, '');
   if (!image || image.length > 2_000_000 || !/^[A-Za-z0-9+/=]+$/.test(image)) throw httpError(400, 'ছবিটি ঠিক নয় বা বড় বেশি');
