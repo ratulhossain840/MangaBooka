@@ -38,7 +38,7 @@ self.addEventListener('fetch', (event) => {
   // পেজ খোলা: নেটওয়ার্ক আগে; ব্যর্থ হলে অফলাইন পেজ (/admin এ ঢোকে না, উপরে বাদ)
   if (req.mode === 'navigate') {
     event.respondWith(
-      fetch(req).catch(() => caches.match(OFFLINE_URL).then((r) => r || new Response('অফলাইন', { status: 503, headers: { 'Content-Type': 'text/plain; charset=utf-8' } })))
+      fetch(req).catch(() => caches.match(OFFLINE_URL).then((r) => r || new Response('<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width"><body style="background:#0b0b10;color:#fff;font:18px system-ui;text-align:center;padding:40px">ইন্টারনেট সংযোগ নেই / You are offline</body>', { status: 200, headers: { 'Content-Type': 'text/html; charset=utf-8' } })))
     );
     return;
   }
