@@ -327,6 +327,7 @@
     "desc": "হোম স্ক্রিনে যোগ করলে অ্যাপের মতো দ্রুত খুলবে।",
     "button": "অ্যাপ ইনস্টল করুন",
     "ios": "iPhone-এ: Share বাটনে চেপে Add to Home Screen বেছে নিন।",
+    "manual": "Chrome এর উপরের ডানদিকের ⋮ মেনু চাপুন, তারপর \"Install app\" বা \"Add to Home screen\" বেছে নিন।",
     "installed": "অ্যাপ ইনস্টল হয়েছে"
   },
   "market": {
