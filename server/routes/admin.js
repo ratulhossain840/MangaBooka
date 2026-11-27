@@ -44,7 +44,8 @@ function invalidateAll() {
 router.get('/me', (req, res) => res.json({ ok: true, uid: req.user?.uid || null }));
 
 // imgbb কী ব্রাউজারে রাখা হয় না, অ্যাডমিন লগইনের পর এখান থেকে পায়
-router.get('/imgbb-key', (req, res) => res.json({ key: process.env.IMGBB_KEY || null }));
+// চাবির আগে-পরে ফাঁকা জায়গা বা " ' থাকলে ছেঁটে নেয় (Render এ পেস্টের সময় প্রায়ই ঢুকে যায়)
+router.get('/imgbb-key', (req, res) => res.json({ key: String(process.env.IMGBB_KEY || '').trim().replace(/^["']+|["']+$/g, '') || null }));
 
 // ================= ড্যাশবোর্ড =================
 router.get('/dashboard', asyncHandler(async (req, res) => {
