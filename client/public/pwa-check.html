@@ -27,10 +27,10 @@ async function chk(url,kind,must){
   await chk('/bg/anime-night-m.webp','bg','image');
   await chk('/bg/anime-night-d.webp','bg','image');
   try{var h=await (await fetch('/?c='+Date.now(),{cache:'no-store'})).text();
-    var links=[].slice.call(h.matchAll(/<link[^>]+href=["']([^"']+\.css)["']/g)).map(function(x){return x[1]});
+    var links=Array.from(h.matchAll(/<link[^>]+href=["']([^"']+\.css)["']/g)).map(function(x){return x[1]});
     var found=false;
     for(var k=0;k<links.length;k++){var t=await (await fetch(links[k]+'?c='+Date.now(),{cache:'no-store'})).text();if(t.indexOf('anime-night')>-1)found=true}
-    add(found?'ok':'bad',(found?'✔':'✖')+' সাইটের CSS এ ব্যাকগ্রাউন্ড ছবির কোড আছে'+(found?'':'<br><small>client/src/styles/anime.css ও client/src/main.jsx (নতুন ভার্সন) আপলোড হয়নি বা ডিপ্লয় বাকি</small>')+' <small>(CSS ফাইল: '+links.length+'টি)</small>')}catch(e){add('bad','✖ CSS পরীক্ষা করা যায়নি')}
+    add(found?'ok':'bad',(found?'✔':'✖')+' সাইটের CSS এ ব্যাকগ্রাউন্ড ছবির কোড আছে'+(found?'':'<br><small>'+(links.length?'CSS আছে কিন্তু তাতে ছবির কোড নেই: client/src/styles/anime.css ও client/src/main.jsx আপলোড হয়নি বা ডিপ্লয় বাকি':'index.html এ CSS লিংক পাওয়া যায়নি')+'</small>')+' <small>(CSS ফাইল: '+links.length+'টি)</small>')}catch(e){add('bad','✖ CSS পরীক্ষা করা যায়নি')}
   if('serviceWorker' in navigator){try{var regs=await navigator.serviceWorker.getRegistrations();
     add(regs.length?'ok':'bad',(regs.length?'✔':'✖')+' সার্ভিস ওয়ার্কার নিবন্ধিত: '+regs.length+'টি'+(regs.length?'':'<br><small>হোম পেজ একবার খুলে ৫ সেকেন্ড পর এই পেজ রিফ্রেশ করুন</small>'))}catch(e){add('bad','✖ SW পড়া যায়নি')}}
   else add('bad','✖ এই ব্রাউজারে সার্ভিস ওয়ার্কার নেই');
