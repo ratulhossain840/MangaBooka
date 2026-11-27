@@ -327,6 +327,7 @@
     "desc": "Add it to your home screen for a faster, app-like experience.",
     "button": "Install app",
     "ios": "On iPhone: tap the Share button, then choose Add to Home Screen.",
+    "manual": "Tap the ⋮ menu at the top right of Chrome, then choose \"Install app\" or \"Add to Home screen\".",
     "installed": "App installed"
   },
   "market": {
@@ -437,4 +438,4 @@
       "body": "Need help? Open Support from the menu. We reply inside the app."
     }
   }
-}
+  }
