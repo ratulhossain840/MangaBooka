@@ -21,7 +21,7 @@ body::after {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(11, 11, 16, 0.5) 0%, rgba(11, 11, 16, 0.72) 45%, rgba(11, 11, 16, 0.86) 100%);
+  background: linear-gradient(180deg, rgba(8, 6, 30, 0.22) 0%, rgba(8, 6, 30, 0.3) 45%, rgba(8, 6, 30, 0.5) 100%);
 }
 @media (min-aspect-ratio: 1/1) {
   body::before {
@@ -29,7 +29,7 @@ body::after {
     background-position: center bottom;
   }
   body::after {
-    background: linear-gradient(180deg, rgba(11, 11, 16, 0.4) 0%, rgba(11, 11, 16, 0.65) 50%, rgba(11, 11, 16, 0.82) 100%);
+    background: linear-gradient(180deg, rgba(8, 6, 30, 0.2) 0%, rgba(8, 6, 30, 0.3) 50%, rgba(8, 6, 30, 0.5) 100%);
   }
 }
 
@@ -61,4 +61,4 @@ h3 {
   body::before {
     background-image: none;
   }
-    }
+  }
