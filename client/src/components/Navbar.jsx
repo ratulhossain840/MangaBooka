@@ -20,7 +20,7 @@ export default function Navbar() {
     <header className="topbar">
       <div className="topbar-in">
         <Link to="/" className="brand grow">
-          <img src="/icons/logo.svg" alt="" width="30" height="30" />
+          <img src="/icons/logo.png" alt="" width="30" height="30" />
           {t('app.name')}
         </Link>
 
@@ -46,4 +46,4 @@ export default function Navbar() {
       <LanguagePicker open={pick} onClose={() => setPick(false)} />
     </header>
   );
-            }
+              }
