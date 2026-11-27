@@ -86,8 +86,8 @@ export default function Layout({ user, onLogout }) {
       <style>{CSS}</style>
       <header className="topbar">
         <div className="topbar-in">
-          <b className="brand grow">MangaBooka Admin</b>
-          <span className="muted small" style={{ maxWidth: 130, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+          <b className="brand grow" style={{ whiteSpace: 'nowrap' }}>MangaBooka Admin</b>
+          <span className="muted small" style={{ maxWidth: 70, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
             {user && user.email}
           </span>
           <button type="button" className="btn btn-sm btn-ghost" onClick={onLogout}>
@@ -133,4 +133,4 @@ export default function Layout({ user, onLogout }) {
       )}
     </div>
   );
-}
+  }
