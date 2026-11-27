@@ -38,7 +38,8 @@ export default function InstallButton({ className = '' }) {
 
   if (done) return null;
   const ios = isIOS();
-  if (!can && !ios) return null;
+  const mobile = /android|iphone|ipad|ipod|mobile/i.test(navigator.userAgent || '');
+  if (!can && !ios && !mobile) return null;
 
   async function onClick() {
     if (can && window.__installPrompt) {
@@ -61,7 +62,7 @@ export default function InstallButton({ className = '' }) {
       <button type="button" className="btn btn-primary btn-block" onClick={onClick}>
         {t('install.button')}
       </button>
-      {showIos && <p className="alert small">{t('install.ios')}</p>}
+      {showIos && <p className="alert small">{ios ? t('install.ios') : t('install.manual')}</p>}
     </div>
   );
-                               }
+         }
