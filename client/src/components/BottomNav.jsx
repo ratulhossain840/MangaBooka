@@ -5,7 +5,14 @@
 import { NavLink } from 'react-router-dom';
 import { useI18n } from '../i18n/index.js';
 
-const S = { fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round' };
+const S = {
+  fill: 'none',
+  stroke: 'currentColor',
+  strokeWidth: 2,
+  strokeLinecap: 'round',
+  strokeLinejoin: 'round',
+};
+
 const ICONS = {
   home: <path d="M3 11l9-8 9 8M5 10v10h5v-6h4v6h5V10" />,
   manga: (
@@ -42,7 +49,12 @@ export default function BottomNav() {
   return (
     <nav className="bottom-nav" aria-label="Main">
       {TABS.map(([to, icon, label, end]) => (
-        <NavLink key={to} to={to} end={end} className={({ isActive }) => (isActive ? 'active' : '')}>
+        <NavLink
+          key={to}
+          to={to}
+          end={end}
+          className={({ isActive }) => (isActive ? 'active' : '')}
+        >
           <svg viewBox="0 0 24 24" {...S} aria-hidden="true">
             {ICONS[icon]}
           </svg>
@@ -51,4 +63,4 @@ export default function BottomNav() {
       ))}
     </nav>
   );
-}
+      }
