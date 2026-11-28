@@ -1,57 +1,76 @@
 /* FILE: theme.css */
 /* PATH: client/src/styles/theme.css (রিপোতে client/src/styles ফোল্ডারের ভেতরে) */
-/* কাজ: সাইটের রঙ, ফন্ট, মাপ, দূরত্বের সব মান এক জায়গায়। রঙ বদলাতে চাইলে শুধু এই ফাইল বদলাও। */
+/* কাজ: সাইটের রঙ, ফন্ট, মাপ, দূরত্বের সব মান এক জায়গায়। OMNI-MANGA স্টাইলের নিয়ন + গ্লাস থিম। */
 
 :root {
   color-scheme: dark;
 
-  /* পটভূমি (গাঢ় থেকে হালকা) */
-  --bg: #0b0b10;
-  --bg-2: #12121a;
-  --surface: #181824;
-  --surface-2: #20202f;
-  --border: #2a2a3b;
+  /* ===== Background (গাঢ় নীল-কালো সাইবারপাঙ্ক) ===== */
+  --bg: #06060f;
+  --bg-2: #0c0c1a;
+  --surface: rgba(18, 18, 36, 0.72);
+  --surface-2: rgba(28, 28, 52, 0.78);
+  --surface-solid: #121224;
+  --border: rgba(100, 140, 255, 0.18);
+  --border-strong: rgba(120, 160, 255, 0.35);
 
-  /* লেখা */
-  --text: #e8e8f0;
-  --text-2: #a9a9bd;
-  --text-3: #74748a;
+  /* ===== Text ===== */
+  --text: #eef0ff;
+  --text-2: #a8b0d0;
+  --text-3: #6e7698;
 
-  /* অ্যাকসেন্ট ও অবস্থার রঙ */
-  --accent: #8b8bff;
-  --accent-2: #6d6df0;
-  --on-accent: #0b0b10;
+  /* ===== Neon Accents (Cyan + Magenta) ===== */
+  --accent: #5ce1ff;
+  --accent-2: #3bb8e8;
+  --accent-glow: rgba(92, 225, 255, 0.45);
+  --magenta: #ff4fd8;
+  --magenta-glow: rgba(255, 79, 216, 0.4);
+  --on-accent: #061018;
+
+  /* Status */
   --ok: #4ade80;
   --warn: #fbbf24;
   --danger: #f87171;
-  --sale: #ff6b8b;
+  --sale: #ff5e9c;
   --gold: #f5c451;
 
-  /* মাপ */
-  --radius-s: 8px;
-  --radius: 14px;
-  --radius-l: 22px;
+  /* ===== Glass ===== */
+  --glass: rgba(16, 18, 40, 0.55);
+  --glass-2: rgba(22, 26, 55, 0.65);
+  --glass-border: rgba(140, 180, 255, 0.22);
+  --blur: 18px;
+
+  /* ===== Sizing ===== */
+  --radius-s: 10px;
+  --radius: 16px;
+  --radius-l: 24px;
+  --radius-xl: 28px;
   --gap: 12px;
   --pad: 16px;
-  --nav-h: 56px;
-  --bottom-nav-h: 60px;
+  --nav-h: 58px;
+  --bottom-nav-h: 64px;
   --buybar-h: 72px;
-  --max-w: 760px;
-  --shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+  --max-w: 780px;
 
-  /* নেভিগেশন বারের নিচে আইফোনের নিরাপদ জায়গা */
+  /* Shadows & Glow */
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.65);
+  --glow-cyan: 0 0 24px rgba(92, 225, 255, 0.35);
+  --glow-magenta: 0 0 24px rgba(255, 79, 216, 0.3);
+
+  /* Safe area */
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
 
-  /* ফন্ট: সিস্টেম ফন্ট, ভাষা অনুযায়ী ফলব্যাক (ওয়েব ফন্ট নামে না, তাই দ্রুত ও অফলাইনে চলে) */
+  /* Font */
   --font: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans Bengali', 'Hind Siliguri', 'Noto Sans JP',
     'Hiragino Sans', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans', Arial, sans-serif;
   --font-read: Georgia, 'Noto Serif Bengali', 'Noto Serif', 'Hiragino Mincho ProN', 'Songti SC', serif;
 
-  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease: cubic-bezier(0.22, 0.7, 0.2, 1);
 }
 
-/* ভাষা অনুযায়ী লাইনের উচ্চতা (বাংলা ও জাপানি/চীনা অক্ষর একটু বেশি জায়গা চায়) */
+/* Line height by language */
 :root[lang='bn'] {
   --lh: 1.65;
 }
@@ -61,4 +80,4 @@
 }
 :root {
   --lh: 1.5;
-}
+  }
