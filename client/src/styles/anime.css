@@ -1,18 +1,17 @@
 /* FILE: anime.css */
 /* PATH: client/src/styles/anime.css (রিপোতে client/src/styles ফোল্ডারের ভেতরে) */
-/* কাজ: ক্রেতার সাইটে অ্যানিমে-স্টাইলের রাতের শহর ও সাকুরার ব্যাকগ্রাউন্ড ছবি (পড়তে অসুবিধা না হয় তাই উপরে গাঢ় পর্দা)। */
-/* ছবি বদলাতে: client/public/bg/ ফোল্ডারে একই নামে নিজের ছবি আপলোড করুন (anime-night-m.webp ফোনের জন্য লম্বা, anime-night-d.webp ডেস্কটপের জন্য চওড়া)। */
-/* ছবি বন্ধ করতে এই ফাইলের লেখা মুছে ফাঁকা করে দিন। */
+/* কাজ: OMNI-MANGA স্টাইলের সাইবারপাঙ্ক ব্যাকগ্রাউন্ড + গাঢ় ওভারলে (পড়তে অসুবিধা না হয়)। */
+/* ছবি বদলাতে: client/public/bg/ ফোল্ডারে anime-night-m.webp (মোবাইল) ও anime-night-d.webp (ডেস্কটপ) রাখুন। */
 
 body {
-  background: #0b0b10;
+  background: #06060f;
 }
 body::before {
   content: '';
   position: fixed;
   inset: 0;
   z-index: -2;
-  background: #0b0b10 url('/bg/anime-night-m.webp') center bottom / cover no-repeat;
+  background: #06060f url('/bg/anime-night-m.webp') center bottom / cover no-repeat;
   transform: translateZ(0);
 }
 body::after {
@@ -21,27 +20,27 @@ body::after {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(8, 6, 30, 0.22) 0%, rgba(8, 6, 30, 0.3) 45%, rgba(8, 6, 30, 0.5) 100%);
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(60, 100, 255, 0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% 80%, rgba(180, 40, 220, 0.12) 0%, transparent 50%),
+    linear-gradient(180deg, rgba(6, 6, 15, 0.35) 0%, rgba(6, 6, 15, 0.55) 40%, rgba(6, 6, 15, 0.78) 100%);
 }
 @media (min-aspect-ratio: 1/1) {
   body::before {
     background-image: url('/bg/anime-night-d.webp');
     background-position: center bottom;
   }
-  body::after {
-    background: linear-gradient(180deg, rgba(8, 6, 30, 0.2) 0%, rgba(8, 6, 30, 0.3) 50%, rgba(8, 6, 30, 0.5) 100%);
-  }
 }
 
-/* ছবির ওপর লেখা যেন স্পষ্ট থাকে */
+/* লেখা যেন স্পষ্ট থাকে */
 h1,
 h2,
 h3 {
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.7);
 }
 .topbar {
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 /* লোগোসহ নাম */
@@ -61,4 +60,4 @@ h3 {
   body::before {
     background-image: none;
   }
-  }
+}
