@@ -21,7 +21,9 @@ export default function ProductCard({ product: p }) {
   return (
     <Link to={'/p/' + p.slug} className="pcard">
       <div className="pcard-cover">
-        {p.coverUrl && <img src={p.coverUrl} alt="" loading="lazy" decoding="async" />}
+        {p.coverUrl && (
+          <img src={p.coverUrl} alt="" loading="lazy" decoding="async" />
+        )}
         {p.badges && p.badges.length > 0 && (
           <div className="badges">
             {p.badges.slice(0, 2).map((b) => (
@@ -35,7 +37,11 @@ export default function ProductCard({ product: p }) {
       <div className="pcard-title">{p.title}</div>
       <PriceTag price={p.price} size="sm" />
       <div className="pcard-meta">{meta}</div>
-      {p.textReady === false && <div className="pcard-meta" style={{ color: 'var(--warn)' }}>{t('card.textNotReady')}</div>}
+      {p.textReady === false && (
+        <div className="pcard-meta" style={{ color: 'var(--warn)' }}>
+          {t('card.textNotReady')}
+        </div>
+      )}
     </Link>
   );
-}
+            }
