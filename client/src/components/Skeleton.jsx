@@ -3,7 +3,13 @@
 // কাজ: লোড হওয়ার সময় ধূসর ঝিলিক-বক্স। ব্যবহার: <Skeleton h={20} w="60%" />, <SkeletonCard />, <SkeletonGrid count={6} />
 
 export default function Skeleton({ w = '100%', h = 16, r, style }) {
-  return <div className="skeleton" aria-hidden="true" style={{ width: w, height: h, borderRadius: r, ...style }} />;
+  return (
+    <div
+      className="skeleton"
+      aria-hidden="true"
+      style={{ width: w, height: h, borderRadius: r, ...style }}
+    />
+  );
 }
 
 export function SkeletonCard() {
@@ -24,4 +30,4 @@ export function SkeletonGrid({ count = 6 }) {
       ))}
     </div>
   );
-}
+                                      }
